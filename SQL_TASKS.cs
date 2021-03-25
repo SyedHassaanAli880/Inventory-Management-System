@@ -338,6 +338,7 @@ namespace inv
             }
         }
 
+        //load any kind of data
         public static void load_data(string proc, DataGridView dv, ListBox lb)
         {
             try
