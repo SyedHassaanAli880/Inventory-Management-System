@@ -134,6 +134,11 @@ namespace inv
             delete_button.Enabled = false;
         }
 
+        private void users_dataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.users_dataGridView.Rows[e.RowIndex].Cells["snoGV"].Value = (e.RowIndex + 1).ToString();
+        }
+
         private void search_textBox_TextChanged_1(object sender, EventArgs e)
         {
             if (search_textBox.Text != "")

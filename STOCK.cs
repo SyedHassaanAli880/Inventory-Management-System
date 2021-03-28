@@ -83,5 +83,10 @@ namespace inv
         {
             LoadStocks();
         }
+
+        private void stocks_dataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.stocks_dataGridView.Rows[e.RowIndex].Cells["snoGV"].Value = (e.RowIndex + 1).ToString();
+        }
     }
 }

@@ -26,6 +26,14 @@ namespace inv
 
             lb.Items.Add(buyingpriceGV);
 
+            //lb.Items.Add(profitmarginGV);
+
+            //lb.Items.Add(discountGV);
+
+            //lb.Items.Add(finalpriceGV);
+
+            lb.Items.Add(BarcodeGV);
+
             SQL_TASKS.load_data("getPRODUCTSwrtCATEGORIES", product_pricing_dataGridView, lb,ht);
         }
 
@@ -82,9 +90,11 @@ namespace inv
 
                             ht.Add("@buyingdate", DateTime.Today);
 
+                            ht.Add("@profitper", pm);
+
                             ht.Add("@discount", disc);
 
-                            ht.Add("@profitper", pm);
+                            ht.Add("@productbarcode", row.Cells["BarcodeGV"].Value.ToString());
 
                             if (SQL_TASKS.insert_update_delete("st_updatePRODUCTPRICE", ht) > 0)
                             {
@@ -209,6 +219,11 @@ namespace inv
             {
                 MainClass.ShowMsg(ex.Message, "Error");
             }
+        }
+
+        private void product_pricing_dataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.product_pricing_dataGridView.Rows[e.RowIndex].Cells["snoGV"].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

@@ -41,13 +41,13 @@ namespace inv
 
         private string[] loadProductswrtBarcode(string proc, Hashtable ht)
         {
-            SqlConnection sql_con = new SqlConnection(MainClass.connection());
+            var sql_con = new SqlConnection(MainClass.connection());
 
             string[] productswrt = new string[3];
 
             try
             {
-                SqlCommand command = new SqlCommand(proc, sql_con);
+                var command = new SqlCommand(proc, sql_con);
 
                 command.CommandType = CommandType.StoredProcedure;
 
@@ -96,13 +96,13 @@ namespace inv
 
         private string[] GetProductDeatils(string proc, Hashtable ht)
         {
-            SqlConnection sql_con = new SqlConnection(MainClass.connection());
+            var sql_con = new SqlConnection(MainClass.connection());
 
             string[] productswrt = new string[3];
 
             try
             {
-                SqlCommand command = new SqlCommand(proc, sql_con);
+                var command = new SqlCommand(proc, sql_con);
 
                 command.CommandType = CommandType.StoredProcedure;
 
@@ -354,6 +354,10 @@ namespace inv
 
                                 ht1.Add("@buyingdate", DateTime.Today);
 
+                                ht1.Add("@profitper", DBNull.Value);
+
+                                ht1.Add("@discount", DBNull.Value);
+
                                 ht1.Add("@productbarcode", row.Cells["productbarcodeGV"].Value.ToString());
 
                                 // inserting product price:
@@ -386,9 +390,15 @@ namespace inv
 
                                     Int64 finalp = Convert.ToInt64(row.Cells["totalGV"].Value) + ExistingBuyingPrice;
 
-                                    ht2.Add("@bp", finalp); ht2.Add("@sp", DBNull.Value);
+                                    ht2.Add("@bp", finalp); 
+                                    
+                                    ht2.Add("@sp", DBNull.Value);
 
                                     ht2.Add("@buyingdate", DateTime.Today);
+
+                                    ht2.Add("@profitper", DBNull.Value);
+
+                                    ht2.Add("@discount", DBNull.Value);
 
                                     ht2.Add("@productbarcode", row.Cells["productbarcodeGV"].Value.ToString());
 
@@ -414,25 +424,18 @@ namespace inv
 
                                     if (SQL_TASKS.insert_update_delete("st_insertPRODUCTPRICE", ht3) > 0) { success = true; } else { success = false; }
                                 }
-
-                                
                             }
 
                                 int q; object stockcount;
 
-                                SQL_TASKS st = new SQL_TASKS();
+                                bool DoesExist = SQL_TASKS.IfProductExist(Convert.ToInt64(row.Cells["productIDGV"].Value.ToString()));
+                          
 
-                                stockcount = st.getProductQuantity(Convert.ToInt32(row.Cells["productIDGV"].Value.ToString()));
-                            
-                                bool update = true;
-
-                                if (stockcount != null && Convert.ToInt32(stockcount) != 0)
-                                { update = true; }
-                                else { update = false; }
-
-                            if (update)
+                            if (DoesExist) //if product does exist
                             {
                                 //update stock
+
+                                stockcount = SQL_TASKS.getProductQuantity(Convert.ToInt32(row.Cells["productIDGV"].Value.ToString()));
 
                                 q = Convert.ToInt32(stockcount);
 
@@ -448,7 +451,7 @@ namespace inv
 
                                 if (SQL_TASKS.insert_update_delete("st_updateSTOCK", hta) > 0) { success = true;}
                             }
-                            else 
+                            else //if product does not exist
                             {
                                 //insert
 
@@ -612,6 +615,8 @@ namespace inv
                     }
                     else
                     {
+                        
+
                         if (edit == false)
                         {
                             purchase_dataGridView.Rows.Add(productID, product_name_textBox_purchase_invoice.Text, product_quantity_textBox.Text, per_unit_price_textBox.Text, total_amount_label.Text, supplier_comboBox.SelectedValue, supplier_comboBox.Text.ToString(), product_barcode_textBox_purchase_invoice.Text);
@@ -629,6 +634,8 @@ namespace inv
                             per_unit_price_textBox.Text = "";
 
                             product_barcode_textBox_purchase_invoice.Focus();
+
+                            int exist = -2;
                         }
                         else
                         {

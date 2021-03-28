@@ -46,6 +46,7 @@
             this.users_dataGridView = new System.Windows.Forms.DataGridView();
             this.role_textBox = new System.Windows.Forms.TextBox();
             this.role_label = new System.Windows.Forms.Label();
+            this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.useridGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -245,6 +246,7 @@
             this.users_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.users_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.users_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.snoGV,
             this.useridGV,
             this.nameGV,
             this.emailGV,
@@ -279,6 +281,7 @@
             this.users_dataGridView.Size = new System.Drawing.Size(971, 618);
             this.users_dataGridView.TabIndex = 1;
             this.users_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.users_dataGridView_CellClick);
+            this.users_dataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.users_dataGridView_RowPostPaint);
             // 
             // role_textBox
             // 
@@ -297,6 +300,15 @@
             this.role_label.Size = new System.Drawing.Size(48, 20);
             this.role_label.TabIndex = 15;
             this.role_label.Text = "Role :";
+            // 
+            // snoGV
+            // 
+            this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.snoGV.HeaderText = "#";
+            this.snoGV.MinimumWidth = 6;
+            this.snoGV.Name = "snoGV";
+            this.snoGV.ReadOnly = true;
+            this.snoGV.Width = 45;
             // 
             // useridGV
             // 
@@ -388,6 +400,7 @@
         private System.Windows.Forms.DataGridView users_dataGridView;
         private System.Windows.Forms.TextBox role_textBox;
         private System.Windows.Forms.Label role_label;
+        private System.Windows.Forms.DataGridViewTextBoxColumn snoGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn useridGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailGV;

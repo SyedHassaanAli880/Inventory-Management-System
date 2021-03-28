@@ -36,6 +36,7 @@
             this.category_label_product_pricing = new System.Windows.Forms.Label();
             this.category_comboBox_product_pricing = new System.Windows.Forms.ComboBox();
             this.product_pricing_dataGridView = new System.Windows.Forms.DataGridView();
+            this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectGV = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.productIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productnameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +44,7 @@
             this.profitmarginGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finalpriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BarcodeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.left_panel_sample2.SuspendLayout();
             this.top_left_panel_sample2.SuspendLayout();
             this.top_panel_sample2.SuspendLayout();
@@ -79,9 +81,6 @@
             // 
             this.search_textBox.Size = new System.Drawing.Size(145, 23);
             // 
-            // back_button
-            // 
-            
             // welcome_label
             // 
             this.welcome_label.Location = new System.Drawing.Point(115, 28);
@@ -126,13 +125,15 @@
             this.product_pricing_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.product_pricing_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.product_pricing_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.snoGV,
             this.selectGV,
             this.productIDGV,
             this.productnameGV,
             this.buyingpriceGV,
             this.profitmarginGV,
             this.discountGV,
-            this.finalpriceGV});
+            this.finalpriceGV,
+            this.BarcodeGV});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,16 +160,26 @@
             this.product_pricing_dataGridView.Size = new System.Drawing.Size(1087, 608);
             this.product_pricing_dataGridView.TabIndex = 4;
             this.product_pricing_dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.product_pricing_dataGridView_CellEndEdit);
+            this.product_pricing_dataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.product_pricing_dataGridView_RowPostPaint);
+            // 
+            // snoGV
+            // 
+            this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.snoGV.HeaderText = "#";
+            this.snoGV.MinimumWidth = 6;
+            this.snoGV.Name = "snoGV";
+            this.snoGV.ReadOnly = true;
+            this.snoGV.Width = 45;
             // 
             // selectGV
             // 
             this.selectGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.selectGV.FalseValue = "0";
-            this.selectGV.HeaderText = "";
+            this.selectGV.HeaderText = "Check";
             this.selectGV.MinimumWidth = 6;
             this.selectGV.Name = "selectGV";
             this.selectGV.TrueValue = "1";
-            this.selectGV.Width = 6;
+            this.selectGV.Width = 53;
             // 
             // productIDGV
             // 
@@ -180,9 +191,10 @@
             // 
             // productnameGV
             // 
-            this.productnameGV.HeaderText = "Product Name";
+            this.productnameGV.HeaderText = "Name";
             this.productnameGV.MinimumWidth = 6;
             this.productnameGV.Name = "productnameGV";
+            this.productnameGV.ReadOnly = true;
             this.productnameGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // buyingpriceGV
@@ -198,6 +210,7 @@
             this.buyingpriceGV.HeaderText = "Buying Price";
             this.buyingpriceGV.MinimumWidth = 6;
             this.buyingpriceGV.Name = "buyingpriceGV";
+            this.buyingpriceGV.ReadOnly = true;
             this.buyingpriceGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // profitmarginGV
@@ -224,6 +237,14 @@
             this.finalpriceGV.HeaderText = "Final Selling Price";
             this.finalpriceGV.MinimumWidth = 6;
             this.finalpriceGV.Name = "finalpriceGV";
+            this.finalpriceGV.ReadOnly = true;
+            // 
+            // BarcodeGV
+            // 
+            this.BarcodeGV.HeaderText = "Barcode";
+            this.BarcodeGV.MinimumWidth = 6;
+            this.BarcodeGV.Name = "BarcodeGV";
+            this.BarcodeGV.ReadOnly = true;
             // 
             // PRODUCT_PRICING
             // 
@@ -255,6 +276,7 @@
         private System.Windows.Forms.Label category_label_product_pricing;
         private System.Windows.Forms.ComboBox category_comboBox_product_pricing;
         private System.Windows.Forms.DataGridView product_pricing_dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn snoGV;
         private System.Windows.Forms.DataGridViewCheckBoxColumn selectGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn productnameGV;
@@ -262,5 +284,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn profitmarginGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn discountGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn finalpriceGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BarcodeGV;
     }
 }

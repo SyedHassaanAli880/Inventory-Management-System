@@ -110,12 +110,14 @@ namespace inv
 
             return ISproductEXISTPRICE;
         }
-        public object getProductQuantity(int productID)
+        public static object getProductQuantity(int productID)
         {
-            SqlConnection sql_con = new SqlConnection(MainClass.connection());
+            object stockcount = null;
+
+            var sql_con = new SqlConnection(MainClass.connection());
             try
             {
-                SqlCommand cmd = new SqlCommand("st_getPRODUCTQUANTITY", sql_con);
+                var cmd = new SqlCommand("st_getPRODUCTQUANTITY", sql_con);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -136,14 +138,45 @@ namespace inv
 
             return stockcount;
         }
-        public Int64 insertPurchaseinvoice(DateTime date, int doneBy, int suppID)
+
+        public static bool IfProductExist(Int64 ProductID)
+        {
+            int x = 0;
+
+            SqlConnection sql_con = new SqlConnection(MainClass.connection());
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_ProductExist", sql_con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@prodID", ProductID);
+
+                sql_con.Open();
+
+                x = Convert.ToInt32(cmd.ExecuteScalar());
+
+                sql_con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+                sql_con.Close();
+            }
+
+            if (x == 0) return false;
+            else return true;  
+        }
+
+        public Int64 InsertPurchaseinvoice(DateTime date, int doneBy, int suppID)
         {
             SqlConnection sql_con = new SqlConnection(MainClass.connection());
             try
             {
                 using (TransactionScope sc = new TransactionScope())
                 {
-                    SqlCommand cmd = new SqlCommand("st_insertPURCHASEINVOICE", sql_con);
+                    var cmd = new SqlCommand("st_insertPURCHASEINVOICE", sql_con);
 
                     cmd.CommandType = CommandType.StoredProcedure;
 

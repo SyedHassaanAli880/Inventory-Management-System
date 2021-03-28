@@ -46,6 +46,9 @@
             this.add_to_cart_button = new System.Windows.Forms.Button();
             this.suppliers_label = new System.Windows.Forms.Label();
             this.purchase_dataGridView = new System.Windows.Forms.DataGridView();
+            this.supplier_comboBox = new System.Windows.Forms.ComboBox();
+            this.gross_total_price_label = new System.Windows.Forms.Label();
+            this.gross_total_label_display = new System.Windows.Forms.Label();
             this.productIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productnameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productquantityGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,9 +58,6 @@
             this.suppliernameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productbarcodeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteGV = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.supplier_comboBox = new System.Windows.Forms.ComboBox();
-            this.gross_total_price_label = new System.Windows.Forms.Label();
-            this.gross_total_label_display = new System.Windows.Forms.Label();
             this.left_panel_sample2.SuspendLayout();
             this.top_left_panel_sample2.SuspendLayout();
             this.top_panel_sample2.SuspendLayout();
@@ -300,6 +300,34 @@
             this.purchase_dataGridView.TabIndex = 3;
             this.purchase_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.purchaseinvoice_dataGridView_CellClick);
             // 
+            // supplier_comboBox
+            // 
+            this.supplier_comboBox.ForeColor = System.Drawing.Color.ForestGreen;
+            this.supplier_comboBox.FormattingEnabled = true;
+            this.supplier_comboBox.Location = new System.Drawing.Point(7, 139);
+            this.supplier_comboBox.Name = "supplier_comboBox";
+            this.supplier_comboBox.Size = new System.Drawing.Size(389, 28);
+            this.supplier_comboBox.TabIndex = 31;
+            // 
+            // gross_total_price_label
+            // 
+            this.gross_total_price_label.AutoSize = true;
+            this.gross_total_price_label.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.gross_total_price_label.Location = new System.Drawing.Point(12, 634);
+            this.gross_total_price_label.Name = "gross_total_price_label";
+            this.gross_total_price_label.Size = new System.Drawing.Size(89, 46);
+            this.gross_total_price_label.TabIndex = 33;
+            this.gross_total_price_label.Text = "0.00";
+            // 
+            // gross_total_label_display
+            // 
+            this.gross_total_label_display.AutoSize = true;
+            this.gross_total_label_display.Location = new System.Drawing.Point(3, 601);
+            this.gross_total_label_display.Name = "gross_total_label_display";
+            this.gross_total_label_display.Size = new System.Drawing.Size(96, 20);
+            this.gross_total_label_display.TabIndex = 32;
+            this.gross_total_label_display.Text = "Gross Total :";
+            // 
             // productIDGV
             // 
             this.productIDGV.HeaderText = "Product ID";
@@ -311,7 +339,7 @@
             // 
             // productnameGV
             // 
-            this.productnameGV.HeaderText = "Product Name";
+            this.productnameGV.HeaderText = "Name";
             this.productnameGV.MinimumWidth = 6;
             this.productnameGV.Name = "productnameGV";
             this.productnameGV.ReadOnly = true;
@@ -319,7 +347,7 @@
             // 
             // productquantityGV
             // 
-            this.productquantityGV.HeaderText = "Product Quantity";
+            this.productquantityGV.HeaderText = "Quantity";
             this.productquantityGV.MinimumWidth = 6;
             this.productquantityGV.Name = "productquantityGV";
             this.productquantityGV.ReadOnly = true;
@@ -373,7 +401,7 @@
             // 
             // productbarcodeGV
             // 
-            this.productbarcodeGV.HeaderText = "Product Barcode";
+            this.productbarcodeGV.HeaderText = "Barcode";
             this.productbarcodeGV.MinimumWidth = 6;
             this.productbarcodeGV.Name = "productbarcodeGV";
             this.productbarcodeGV.ReadOnly = true;
@@ -388,34 +416,6 @@
             this.deleteGV.ReadOnly = true;
             this.deleteGV.Text = "DELETE";
             this.deleteGV.UseColumnTextForButtonValue = true;
-            // 
-            // supplier_comboBox
-            // 
-            this.supplier_comboBox.ForeColor = System.Drawing.Color.ForestGreen;
-            this.supplier_comboBox.FormattingEnabled = true;
-            this.supplier_comboBox.Location = new System.Drawing.Point(7, 139);
-            this.supplier_comboBox.Name = "supplier_comboBox";
-            this.supplier_comboBox.Size = new System.Drawing.Size(389, 28);
-            this.supplier_comboBox.TabIndex = 31;
-            // 
-            // gross_total_price_label
-            // 
-            this.gross_total_price_label.AutoSize = true;
-            this.gross_total_price_label.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.gross_total_price_label.Location = new System.Drawing.Point(12, 634);
-            this.gross_total_price_label.Name = "gross_total_price_label";
-            this.gross_total_price_label.Size = new System.Drawing.Size(89, 46);
-            this.gross_total_price_label.TabIndex = 33;
-            this.gross_total_price_label.Text = "0.00";
-            // 
-            // gross_total_label_display
-            // 
-            this.gross_total_label_display.AutoSize = true;
-            this.gross_total_label_display.Location = new System.Drawing.Point(3, 601);
-            this.gross_total_label_display.Name = "gross_total_label_display";
-            this.gross_total_label_display.Size = new System.Drawing.Size(96, 20);
-            this.gross_total_label_display.TabIndex = 32;
-            this.gross_total_label_display.Text = "Gross Total :";
             // 
             // PURCHASE_INVOICE
             // 
