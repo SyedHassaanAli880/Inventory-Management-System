@@ -174,14 +174,14 @@
             // 
             // snoGV
             // 
-            this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.snoGV.Frozen = true;
-            this.snoGV.HeaderText = "Sno.";
+            this.snoGV.HeaderText = "#";
             this.snoGV.MinimumWidth = 6;
             this.snoGV.Name = "snoGV";
             this.snoGV.ReadOnly = true;
             this.snoGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.snoGV.Width = 165;
+            this.snoGV.Width = 45;
             // 
             // categoryidGV
             // 

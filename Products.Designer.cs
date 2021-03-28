@@ -224,10 +224,12 @@
             // 
             // sno
             // 
+            this.sno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.sno.HeaderText = "#";
             this.sno.MinimumWidth = 2;
             this.sno.Name = "sno";
             this.sno.ReadOnly = true;
+            this.sno.Width = 45;
             // 
             // productidGV
             // 

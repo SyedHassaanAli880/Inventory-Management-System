@@ -308,10 +308,12 @@
             // 
             // snoGV
             // 
+            this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.snoGV.HeaderText = "#";
             this.snoGV.MinimumWidth = 6;
             this.snoGV.Name = "snoGV";
             this.snoGV.ReadOnly = true;
+            this.snoGV.Width = 45;
             // 
             // supplierIDGV
             // 

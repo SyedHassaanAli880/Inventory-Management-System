@@ -26,12 +26,6 @@ namespace inv
 
             lb.Items.Add(buyingpriceGV);
 
-            //lb.Items.Add(profitmarginGV);
-
-            //lb.Items.Add(discountGV);
-
-            //lb.Items.Add(finalpriceGV);
-
             SQL_TASKS.load_data("getPRODUCTSwrtCATEGORIES", product_pricing_dataGridView, lb,ht);
         }
 
