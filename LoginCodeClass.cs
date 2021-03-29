@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections;
-using System.Windows.Forms;
 
 namespace inv
 {
@@ -56,9 +55,9 @@ namespace inv
 
             try
             {
-                SqlConnection sql_con = new SqlConnection(MainClass.connection());
+                var sql_con = new SqlConnection(MainClass.connection());
 
-                SqlCommand cmd = new SqlCommand(proc, sql_con);
+                var cmd = new SqlCommand(proc, sql_con);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 

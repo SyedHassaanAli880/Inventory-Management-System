@@ -30,11 +30,11 @@ namespace inv
 
                     MainClass.ShowWindow(li, MDI.ActiveForm);
 
-                    //LoginCodeClass.loggedin = false;
+                    LoginCodeClass.IsLogged = false;
                 }
                 else
                 {
-                    //LoginCodeClass.loggedin = true;
+                    LoginCodeClass.IsLogged = true;
                 }
 
 
@@ -89,199 +89,199 @@ namespace inv
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (LoginCodeClass.IsLogged == false)
-            //    {
-            //        throw new Exception("Login first.");
-            //    }
-            //    else
-            //    {
-            //        if (LoginCodeClass.isAdmin == true)
-            //        {
+            try
+            {
+                if (LoginCodeClass.IsLogged == false)
+                {
+                    throw new Exception("Login first.");
+                }
+                else
+                {
+                    if (LoginCodeClass.isAdmin == true)
+                    {
                         users us = new users();
 
                         MainClass.ShowWindow(us, MDI.ActiveForm);
-            //        }
-            //        else
-            //        {
-            //            MainClass.ShowMsg("You do not have permission to view users.", "Error");
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MainClass.ShowMsg(ex.Message, "Error");
-            //}
+                    }
+                    else
+                    {
+                        MainClass.ShowMsg("You do not have permission to view users.", "Error");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MainClass.ShowMsg(ex.Message, "Error");
+            }
         }
 
         private void categoriesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ////try
-            ////{
-            ////    if (LoginCodeClass.IsLogged == false)
-            ////    {
-            ////        throw new Exception("Login first.");
-            ////    }
-            ////    else
-            ////    {
+            try
+            {
+                if (LoginCodeClass.IsLogged == false)
+                {
+                    throw new Exception("Login first.");
+                }
+                else
+                {
                     CATEGORIES ct = new CATEGORIES();
 
                     MainClass.ShowWindow(ct, MDI.ActiveForm);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MainClass.ShowMsg(ex.Message, "Error");
-            //}
+                }
+            }
+            catch (Exception ex)
+            {
+                MainClass.ShowMsg(ex.Message, "Error");
+            }
         }
 
         private void productsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (LoginCodeClass.IsLogged == false)
-            //    {
-            //        throw new Exception("Login first.");
-            //    }
-            //    else
-            //    {
+            try
+            {
+                if (LoginCodeClass.IsLogged == false)
+                {
+                    throw new Exception("Login first.");
+                }
+                else
+                {
                     Products pd = new Products();
 
                     MainClass.ShowWindow(pd, MDI.ActiveForm);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MainClass.ShowMsg(ex.Message, "Error");
-            //}
+                }
+            }
+            catch (Exception ex)
+            {
+                MainClass.ShowMsg(ex.Message, "Error");
+            }
         }
 
         private void productPricingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (LoginCodeClass.IsLogged == false)
-            //    {
-            //        throw new Exception("Login first.");
-            //    }
-            //    else
-            //    {
+            try
+            {
+                if (LoginCodeClass.IsLogged == false)
+                {
+                    throw new Exception("Login first.");
+                }
+                else
+                {
                     PRODUCT_PRICING pp = new PRODUCT_PRICING();
 
                     MainClass.ShowWindow(pp, MDI.ActiveForm);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MainClass.ShowMsg(ex.Message, "Error");
-            //}
+                }
+            }
+            catch (Exception ex)
+            {
+                MainClass.ShowMsg(ex.Message, "error");
+            }
         }
 
         private void purchaseInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (LoginCodeClass.IsLogged == false)
-            //    {
-            //        throw new Exception("Login first.");
-            //    }
-            //    else
-            //    {
+            try
+            {
+                if (LoginCodeClass.IsLogged == false)
+                {
+                    throw new Exception("Login first.");
+                }
+                else
+                {
                     PURCHASE_INVOICE pi = new PURCHASE_INVOICE();
 
                     MainClass.ShowWindow(pi, MDI.ActiveForm);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MainClass.ShowMsg(ex.Message, "Error");
-            //}
+                }
+            }
+            catch (Exception ex)
+            {
+                MainClass.ShowMsg(ex.Message, "Error");
+            }
         }
 
         private void salesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (LoginCodeClass.IsLogged == false)
-            //    {
-            //        throw new Exception("Login first.");
-            //    }
-            //    else
-            //    {
+            try
+            {
+                if (LoginCodeClass.IsLogged == false)
+                {
+                    throw new Exception("Login first.");
+                }
+                else
+                {
                     SALES sl = new SALES();
 
                     MainClass.ShowWindow(sl, MDI.ActiveForm);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MainClass.ShowMsg(ex.Message, "Error");
-            //}
+                }
+            }
+            catch (Exception ex)
+            {
+                MainClass.ShowMsg(ex.Message, "Error");
+            }
         }
 
         private void salesReturnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (LoginCodeClass.IsLogged == false)
-            //    {
-            //        throw new Exception("Login first.");
-            //    }
-            //    else
-            //    {
+            try
+            {
+                if (LoginCodeClass.IsLogged == false)
+                {
+                    throw new Exception("Login first.");
+                }
+                else
+                {
                     SALES_RETURN sr = new SALES_RETURN();
 
                     MainClass.ShowWindow(sr, MDI.ActiveForm);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MainClass.ShowMsg(ex.Message, "Error");
-            //}
-        
-    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MainClass.ShowMsg(ex.Message, "Error");
+            }
+
+        }
 
         private void stockToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (LoginCodeClass.IsLogged == false)
-            //    {
-            //        throw new Exception("Login first.");
-            //    }
-            //    else
-            //    {
+            try
+            {
+                if (LoginCodeClass.IsLogged == false)
+                {
+                    throw new Exception("Login first.");
+                }
+                else
+                {
                     STOCK st = new STOCK();
 
                     MainClass.ShowWindow(st, MDI.ActiveForm);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MainClass.ShowMsg(ex.Message, "Error");
-            //}
+                }
+            }
+            catch (Exception ex)
+            {
+                MainClass.ShowMsg(ex.Message, "Error");
+            }
         }
 
         private void suppliersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-                //if (LoginCodeClass.IsLogged == false)
-                //{
-                //    throw new Exception("Login first.");
-                //}
-                //else
-                //{
+            try
+            {
+                if (LoginCodeClass.IsLogged == false)
+                {
+                    throw new Exception("Login first.");
+                }
+                else
+                {
                     SUPPLIERS sp = new SUPPLIERS();
 
                     MainClass.ShowWindow(sp, MDI.ActiveForm);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MainClass.ShowMsg(ex.Message, "Error");
-            //}
+                }
+            }
+            catch (Exception ex)
+            {
+                MainClass.ShowMsg(ex.Message, "Error");
+            }
         }
     }
 }

@@ -439,9 +439,9 @@ namespace inv
 
                 cb.Items.Clear();
 
-                SqlConnection sql = new SqlConnection(MainClass.connection());
+                var sql = new SqlConnection(MainClass.connection());
 
-                SqlCommand cmd = new SqlCommand(proc, sql);
+                var cmd = new SqlCommand(proc, sql);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -450,9 +450,11 @@ namespace inv
                     cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
                 }
 
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                var da = new SqlDataAdapter(cmd);
 
-                DataTable dt = new DataTable(); da.Fill(dt);
+                var dt = new DataTable(); 
+                
+                da.Fill(dt);
 
                 DataRow dr = dt.NewRow();
                     

@@ -143,7 +143,7 @@
             this.username_textBox.Name = "username_textBox";
             this.username_textBox.Size = new System.Drawing.Size(389, 30);
             this.username_textBox.TabIndex = 10;
-            this.username_textBox.Text = "Hassan@gmail";
+            this.username_textBox.Text = "syedhassanali880@gmail.com";
             // 
             // password_label
             // 

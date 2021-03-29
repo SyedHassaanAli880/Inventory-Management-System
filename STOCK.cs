@@ -20,7 +20,7 @@ namespace inv
 
             lb.Items.Add(productbarcodeGV);
 
-            lb.Items.Add(PerUnitPriceGV);
+            //lb.Items.Add(PerUnitPriceGV);
 
             lb.Items.Add(productbuyingpriceGV);
 
@@ -46,7 +46,7 @@ namespace inv
 
             lb.Items.Add(productbarcodeGV);
 
-            lb.Items.Add(PerUnitPriceGV);
+            //lb.Items.Add(PerUnitPriceGV);
 
             lb.Items.Add(productbuyingpriceGV);
 
