@@ -20,15 +20,17 @@ namespace inv
 
             lb.Items.Add(productbarcodeGV);
 
-            lb.Items.Add(expirydateGV);
+            lb.Items.Add(PerUnitPriceGV);
 
             lb.Items.Add(productbuyingpriceGV);
+
+            lb.Items.Add(BuyingDateGV);
+
+            lb.Items.Add(expirydateGV);
 
             lb.Items.Add(productcategoryGV);
 
             lb.Items.Add(availablestockGV);
-
-            lb.Items.Add(totalGV);
 
             lb.Items.Add(statusGV);
 
@@ -44,15 +46,17 @@ namespace inv
 
             lb.Items.Add(productbarcodeGV);
 
-            lb.Items.Add(expirydateGV);
+            lb.Items.Add(PerUnitPriceGV);
 
             lb.Items.Add(productbuyingpriceGV);
+
+            lb.Items.Add(BuyingDateGV);
+
+            lb.Items.Add(expirydateGV);
 
             lb.Items.Add(productcategoryGV);
 
             lb.Items.Add(availablestockGV);
-
-            lb.Items.Add(totalGV);
 
             lb.Items.Add(statusGV);
 

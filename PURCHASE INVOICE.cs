@@ -321,7 +321,7 @@ namespace inv
                             {
                                 //inserting purchase invoice
 
-                                purchaseinvoiceID_FROM_SQL_TASKS = ss.insertPurchaseinvoice(DateTime.Today, LoginCodeClass.USERID,Convert.ToInt32(row.Cells["supplierIDGV"].Value));
+                                purchaseinvoiceID_FROM_SQL_TASKS = ss.InsertPurchaseinvoice(DateTime.Today, LoginCodeClass.USERID,Convert.ToInt32(row.Cells["supplierIDGV"].Value));
 
                                 //inserting purchase invoice details
 

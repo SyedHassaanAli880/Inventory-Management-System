@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.stocks_dataGridView = new System.Windows.Forms.DataGridView();
             this.search_stock_textBox = new System.Windows.Forms.TextBox();
             this.search_products_label = new System.Windows.Forms.Label();
@@ -42,11 +41,12 @@
             this.productidGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productnameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productbarcodeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expirydateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PerUnitPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productbuyingpriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BuyingDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expirydateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productcategoryGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.availablestockGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.left_panel.SuspendLayout();
             this.left_top_panel.SuspendLayout();
@@ -107,32 +107,33 @@
             this.productidGV,
             this.productnameGV,
             this.productbarcodeGV,
-            this.expirydateGV,
+            this.PerUnitPriceGV,
             this.productbuyingpriceGV,
+            this.BuyingDateGV,
+            this.expirydateGV,
             this.productcategoryGV,
             this.availablestockGV,
-            this.totalGV,
             this.statusGV});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.stocks_dataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.stocks_dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.stocks_dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stocks_dataGridView.Location = new System.Drawing.Point(234, 102);
             this.stocks_dataGridView.Name = "stocks_dataGridView";
             this.stocks_dataGridView.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stocks_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stocks_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.stocks_dataGridView.RowHeadersVisible = false;
             this.stocks_dataGridView.RowHeadersWidth = 51;
             this.stocks_dataGridView.RowTemplate.Height = 24;
@@ -219,13 +220,12 @@
             this.productbarcodeGV.ReadOnly = true;
             this.productbarcodeGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // expirydateGV
+            // PerUnitPriceGV
             // 
-            this.expirydateGV.HeaderText = "Expiry Date";
-            this.expirydateGV.MinimumWidth = 6;
-            this.expirydateGV.Name = "expirydateGV";
-            this.expirydateGV.ReadOnly = true;
-            this.expirydateGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PerUnitPriceGV.HeaderText = "Per Unit Price";
+            this.PerUnitPriceGV.MinimumWidth = 6;
+            this.PerUnitPriceGV.Name = "PerUnitPriceGV";
+            this.PerUnitPriceGV.ReadOnly = true;
             // 
             // productbuyingpriceGV
             // 
@@ -236,11 +236,26 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.productbuyingpriceGV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.productbuyingpriceGV.HeaderText = "Buying Price";
+            this.productbuyingpriceGV.HeaderText = "Total Buying Price";
             this.productbuyingpriceGV.MinimumWidth = 6;
             this.productbuyingpriceGV.Name = "productbuyingpriceGV";
             this.productbuyingpriceGV.ReadOnly = true;
             this.productbuyingpriceGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // BuyingDateGV
+            // 
+            this.BuyingDateGV.HeaderText = "Buying Date";
+            this.BuyingDateGV.MinimumWidth = 6;
+            this.BuyingDateGV.Name = "BuyingDateGV";
+            this.BuyingDateGV.ReadOnly = true;
+            // 
+            // expirydateGV
+            // 
+            this.expirydateGV.HeaderText = "Expiry Date";
+            this.expirydateGV.MinimumWidth = 6;
+            this.expirydateGV.Name = "expirydateGV";
+            this.expirydateGV.ReadOnly = true;
+            this.expirydateGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // productcategoryGV
             // 
@@ -257,20 +272,6 @@
             this.availablestockGV.Name = "availablestockGV";
             this.availablestockGV.ReadOnly = true;
             this.availablestockGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // totalGV
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.totalGV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.totalGV.HeaderText = "Total Amount";
-            this.totalGV.MinimumWidth = 6;
-            this.totalGV.Name = "totalGV";
-            this.totalGV.ReadOnly = true;
             // 
             // statusGV
             // 
@@ -313,11 +314,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productidGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn productnameGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn productbarcodeGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expirydateGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PerUnitPriceGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn productbuyingpriceGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BuyingDateGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expirydateGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn productcategoryGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn availablestockGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusGV;
     }
 }

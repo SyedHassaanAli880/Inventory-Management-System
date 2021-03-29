@@ -126,11 +126,9 @@ namespace inv
 
                                     SQL_TASKS.insert_update_delete("st_insertDeletedItemPI", ht);
 
-                                    SQL_TASKS st = new SQL_TASKS();
-
                                     int q; object ob;
 
-                                    ob = st.getProductQuantity(Convert.ToInt32(row.Cells["productIDGV"].Value.ToString()));
+                                    ob = SQL_TASKS.getProductQuantity(Convert.ToInt32(row.Cells["productIDGV"].Value.ToString()));
 
                                     bool update = true;
 
