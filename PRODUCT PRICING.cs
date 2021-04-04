@@ -57,7 +57,10 @@ namespace inv
 
         public override void save_button_Click(object sender, EventArgs e)
         {
-            bool success = false; int che = 0;
+            bool success = false; 
+            
+            int che = 0;
+            
             try
             {
                 if (category_comboBox_product_pricing.SelectedIndex != -1 && product_pricing_dataGridView.Rows.Count != 0)
@@ -103,10 +106,14 @@ namespace inv
                             else { success = false; }
                         }
                     }
-                        if (success && che >0)
-                        { MainClass.ShowMsg("Updated successfully...", "Success"); enable_crude_buttons(); che = 0; }
+                        if (success && che > 0)
+                        { 
+                            MainClass.ShowMsg("Updated successfully...", "Success"); enable_crude_buttons(); che = 0;
+                        }
                         else
-                        { throw new Exception("Unbale to update.Verify if the product is checked."); che = 0; }
+                        { 
+                            throw new Exception("Unbale to update.Verify if the product is checked."); che = 0; 
+                        }
                     
                 }
                 else { throw new Exception("Select a product first!"); che = 0; }
@@ -198,7 +205,7 @@ namespace inv
 
                         if (row.Cells["discountGV"].Value != null && rg.Match(row.Cells["discountGV"].Value.ToString()).Success)
                         {
-                            discount = buyingprice * (Convert.ToSingle(row.Cells["discountGV"].Value.ToString()) / 100);
+                            discount = finalsellingprice * (Convert.ToSingle(row.Cells["discountGV"].Value.ToString()) / 100);
                         }
                         else
                         {

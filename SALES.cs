@@ -129,7 +129,9 @@ namespace inv
 
                 if (product_barcode_textBox.Text != "")
                 {
-                    int qCount = 0, sCount = 0, nCount = 0; productswrt = loadProductswrtBarcode("st_getPRODUCTbyBarcodeFORSALES", ht);
+                    int qCount = 0, sCount = 0, nCount = 0; productswrt = loadProductswrtBarcode("st_getPRODUCTbyBarcode", ht);
+
+                    //st_getPRODUCTbyBarcodeFORSALES
 
                     product_barcode_textBox.Text = "";
 
@@ -344,8 +346,6 @@ namespace inv
             }
         }
 
-        
-
         private void amount_given_textBox_Validating(object sender, CancelEventArgs e)
         {
             try
@@ -446,9 +446,11 @@ namespace inv
 
                                 MainClass.disbale_reset(left_panel_sample2); sales_dataGridView.Rows.Clear();
 
-                                SALES_REPORT sr = new SALES_REPORT();
+                                //SALES_REPORT sr = new SALES_REPORT();
 
-                                sr.Show(); gross_total_price_label.Text = "0.00";
+                                //sr.Show(); 
+                                
+                                gross_total_price_label.Text = "0.00";
                             }
                             else
                             {
@@ -471,8 +473,5 @@ namespace inv
 
         }
     }
-                
-    
-            
-    
+
 }
