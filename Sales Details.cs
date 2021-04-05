@@ -16,5 +16,10 @@ namespace inv
         {
             this.Hide();
         }
+
+        private void load_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

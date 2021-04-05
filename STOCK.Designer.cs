@@ -33,10 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.stocks_dataGridView = new System.Windows.Forms.DataGridView();
-            this.search_stock_textBox = new System.Windows.Forms.TextBox();
-            this.search_products_label = new System.Windows.Forms.Label();
-            this.refresh_button = new System.Windows.Forms.Button();
-            this.total_records_label = new System.Windows.Forms.Label();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productidGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productnameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +44,10 @@
             this.productcategoryGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.availablestockGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.search_stock_textBox = new System.Windows.Forms.TextBox();
+            this.search_products_label = new System.Windows.Forms.Label();
+            this.refresh_button = new System.Windows.Forms.Button();
+            this.total_records_label = new System.Windows.Forms.Label();
             this.left_panel.SuspendLayout();
             this.left_top_panel.SuspendLayout();
             this.top_panel.SuspendLayout();
@@ -140,51 +140,8 @@
             this.stocks_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.stocks_dataGridView.Size = new System.Drawing.Size(1553, 640);
             this.stocks_dataGridView.TabIndex = 3;
+            this.stocks_dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.stocks_dataGridView_CellFormatting);
             this.stocks_dataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.stocks_dataGridView_RowPostPaint);
-            // 
-            // search_stock_textBox
-            // 
-            this.search_stock_textBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.search_stock_textBox.ForeColor = System.Drawing.Color.DarkGray;
-            this.search_stock_textBox.Location = new System.Drawing.Point(626, 34);
-            this.search_stock_textBox.Name = "search_stock_textBox";
-            this.search_stock_textBox.Size = new System.Drawing.Size(563, 30);
-            this.search_stock_textBox.TabIndex = 1;
-            this.search_stock_textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // search_products_label
-            // 
-            this.search_products_label.AutoSize = true;
-            this.search_products_label.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_products_label.Location = new System.Drawing.Point(441, 32);
-            this.search_products_label.Name = "search_products_label";
-            this.search_products_label.Size = new System.Drawing.Size(167, 28);
-            this.search_products_label.TabIndex = 2;
-            this.search_products_label.Text = "Search products:";
-            // 
-            // refresh_button
-            // 
-            this.refresh_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refresh_button.FlatAppearance.BorderSize = 0;
-            this.refresh_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.refresh_button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.refresh_button.Location = new System.Drawing.Point(1217, 32);
-            this.refresh_button.Name = "refresh_button";
-            this.refresh_button.Size = new System.Drawing.Size(121, 37);
-            this.refresh_button.TabIndex = 3;
-            this.refresh_button.Text = "REFRESH";
-            this.refresh_button.UseVisualStyleBackColor = true;
-            this.refresh_button.Click += new System.EventHandler(this.refresh_button_Click);
-            // 
-            // total_records_label
-            // 
-            this.total_records_label.AutoSize = true;
-            this.total_records_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.total_records_label.Location = new System.Drawing.Point(1354, 34);
-            this.total_records_label.Name = "total_records_label";
-            this.total_records_label.Size = new System.Drawing.Size(163, 28);
-            this.total_records_label.TabIndex = 4;
-            this.total_records_label.Text = "Total Records: 0";
             // 
             // snoGV
             // 
@@ -280,6 +237,50 @@
             this.statusGV.Name = "statusGV";
             this.statusGV.ReadOnly = true;
             this.statusGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // search_stock_textBox
+            // 
+            this.search_stock_textBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.search_stock_textBox.ForeColor = System.Drawing.Color.DarkGray;
+            this.search_stock_textBox.Location = new System.Drawing.Point(626, 34);
+            this.search_stock_textBox.Name = "search_stock_textBox";
+            this.search_stock_textBox.Size = new System.Drawing.Size(563, 30);
+            this.search_stock_textBox.TabIndex = 1;
+            this.search_stock_textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // search_products_label
+            // 
+            this.search_products_label.AutoSize = true;
+            this.search_products_label.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_products_label.Location = new System.Drawing.Point(441, 32);
+            this.search_products_label.Name = "search_products_label";
+            this.search_products_label.Size = new System.Drawing.Size(167, 28);
+            this.search_products_label.TabIndex = 2;
+            this.search_products_label.Text = "Search products:";
+            // 
+            // refresh_button
+            // 
+            this.refresh_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refresh_button.FlatAppearance.BorderSize = 0;
+            this.refresh_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.refresh_button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.refresh_button.Location = new System.Drawing.Point(1217, 32);
+            this.refresh_button.Name = "refresh_button";
+            this.refresh_button.Size = new System.Drawing.Size(121, 37);
+            this.refresh_button.TabIndex = 3;
+            this.refresh_button.Text = "REFRESH";
+            this.refresh_button.UseVisualStyleBackColor = true;
+            this.refresh_button.Click += new System.EventHandler(this.refresh_button_Click);
+            // 
+            // total_records_label
+            // 
+            this.total_records_label.AutoSize = true;
+            this.total_records_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.total_records_label.Location = new System.Drawing.Point(1354, 34);
+            this.total_records_label.Name = "total_records_label";
+            this.total_records_label.Size = new System.Drawing.Size(163, 28);
+            this.total_records_label.TabIndex = 4;
+            this.total_records_label.Text = "Total Records: 0";
             // 
             // STOCK
             // 

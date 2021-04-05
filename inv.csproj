@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +33,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86|AnyCPU'">
     <OutputPath>bin\x86\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -145,6 +148,12 @@
     <Compile Include="SALES.Designer.cs">
       <DependentUpon>SALES.cs</DependentUpon>
     </Compile>
+    <Compile Include="salesReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>salesReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="sample1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +234,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SALES.resx">
       <DependentUpon>SALES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>salesReceipt.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="sample1.resx">
       <DependentUpon>sample1.cs</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace inv
@@ -46,7 +47,7 @@ namespace inv
 
             lb.Items.Add(productbarcodeGV);
 
-            //lb.Items.Add(PerUnitPriceGV);
+            lb.Items.Add(PerUnitPriceGV);
 
             lb.Items.Add(productbuyingpriceGV);
 
@@ -61,6 +62,14 @@ namespace inv
             lb.Items.Add(statusGV);
 
             SQL_TASKS.load_data("st_getSTOCK", stocks_dataGridView, lb);
+
+            foreach(DataGridViewRow row in stocks_dataGridView.Rows)
+            {
+                if(Convert.ToInt32(row.Cells["availablestockGV"].Value) == 0)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -91,6 +100,18 @@ namespace inv
         private void stocks_dataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             this.stocks_dataGridView.Rows[e.RowIndex].Cells["snoGV"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void stocks_dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow row in stocks_dataGridView.Rows)
+            {
+                if (Convert.ToInt32(row.Cells["availablestockGV"].Value) == 0)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
+
         }
     }
 }

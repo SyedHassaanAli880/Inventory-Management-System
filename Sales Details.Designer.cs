@@ -78,6 +78,7 @@
             this.load_button.TabIndex = 8;
             this.load_button.Text = "&LOAD";
             this.load_button.UseVisualStyleBackColor = true;
+            this.load_button.Click += new System.EventHandler(this.load_button_Click);
             // 
             // Sales_Details
             // 

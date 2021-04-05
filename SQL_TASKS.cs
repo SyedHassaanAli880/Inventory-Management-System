@@ -84,6 +84,7 @@ namespace inv
         }
 
         public static object ISproductEXISTPRICE;
+
         public static object getProductPrice(int productID)
         {
             SqlConnection sql_con = new SqlConnection(MainClass.connection());
@@ -110,6 +111,7 @@ namespace inv
 
             return ISproductEXISTPRICE;
         }
+
         public static object getProductQuantity(int productID)
         {
             object stockcount = null;
@@ -214,6 +216,7 @@ namespace inv
 
             return purchaseinvoiceIDSQLTASKS;
         }
+
         public int insertPurchaseinvoicedetails(Int64 purchID, int prodID, int quan, float price)
         {
             SqlConnection sql_con = new SqlConnection(MainClass.connection());
