@@ -121,6 +121,7 @@ namespace inv
 
             enable_crude_buttons();
 
+            not_found_label.Visible = false;
         }
 
         public override void add_button_Click(object sender, EventArgs e)
@@ -147,6 +148,8 @@ namespace inv
 
                 lb.Items.Add(useridGV);
 
+                lb.Items.Add(nameGV);
+
                 lb.Items.Add(emailGV);
 
                 lb.Items.Add(passwordGV);
@@ -161,7 +164,17 @@ namespace inv
 
                 ht.Add("@data", search_textBox.Text);
 
-                SQL_TASKS.load_data("st_getusersdatalike", users_dataGridView, lb, ht);
+                SQL_TASKS.load_data("st_searchUSERS", users_dataGridView, lb, ht);
+
+                if (users_dataGridView.Rows.Count == 0)
+                {
+                    not_found_label.Visible = true;
+                }
+                else
+                {
+                    not_found_label.Visible = false;
+                }
+
             }
             else
             {

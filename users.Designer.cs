@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.name_label = new System.Windows.Forms.Label();
             this.username_label = new System.Windows.Forms.Label();
             this.phone_number_label = new System.Windows.Forms.Label();
@@ -44,8 +44,6 @@
             this.status_comboBox = new System.Windows.Forms.ComboBox();
             this.status_label = new System.Windows.Forms.Label();
             this.users_dataGridView = new System.Windows.Forms.DataGridView();
-            this.role_textBox = new System.Windows.Forms.TextBox();
-            this.role_label = new System.Windows.Forms.Label();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.useridGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +52,9 @@
             this.phonenumberGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role_textBox = new System.Windows.Forms.TextBox();
+            this.role_label = new System.Windows.Forms.Label();
+            this.not_found_label = new System.Windows.Forms.Label();
             this.left_panel_sample2.SuspendLayout();
             this.top_left_panel_sample2.SuspendLayout();
             this.top_panel_sample2.SuspendLayout();
@@ -105,10 +106,12 @@
             // 
             // middle_panel_sample2
             // 
+            this.middle_panel_sample2.Controls.Add(this.not_found_label);
             this.middle_panel_sample2.Controls.Add(this.users_dataGridView);
             this.middle_panel_sample2.Location = new System.Drawing.Point(400, 84);
             this.middle_panel_sample2.Size = new System.Drawing.Size(971, 673);
             this.middle_panel_sample2.Controls.SetChildIndex(this.users_dataGridView, 0);
+            this.middle_panel_sample2.Controls.SetChildIndex(this.not_found_label, 0);
             // 
             // search_textBox
             // 
@@ -236,14 +239,14 @@
             this.users_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.users_dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.users_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.users_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.users_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.users_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.users_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
@@ -254,26 +257,26 @@
             this.phonenumberGV,
             this.statusGV,
             this.roleGV});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.users_dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.users_dataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.users_dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.users_dataGridView.Location = new System.Drawing.Point(0, 55);
             this.users_dataGridView.Name = "users_dataGridView";
             this.users_dataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.users_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.users_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.users_dataGridView.RowHeadersVisible = false;
             this.users_dataGridView.RowHeadersWidth = 51;
             this.users_dataGridView.RowTemplate.Height = 24;
@@ -282,24 +285,6 @@
             this.users_dataGridView.TabIndex = 1;
             this.users_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.users_dataGridView_CellClick);
             this.users_dataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.users_dataGridView_RowPostPaint);
-            // 
-            // role_textBox
-            // 
-            this.role_textBox.ForeColor = System.Drawing.Color.ForestGreen;
-            this.role_textBox.Location = new System.Drawing.Point(7, 638);
-            this.role_textBox.MaxLength = 40;
-            this.role_textBox.Name = "role_textBox";
-            this.role_textBox.Size = new System.Drawing.Size(389, 27);
-            this.role_textBox.TabIndex = 16;
-            // 
-            // role_label
-            // 
-            this.role_label.AutoSize = true;
-            this.role_label.Location = new System.Drawing.Point(3, 615);
-            this.role_label.Name = "role_label";
-            this.role_label.Size = new System.Drawing.Size(48, 20);
-            this.role_label.TabIndex = 15;
-            this.role_label.Text = "Role :";
             // 
             // snoGV
             // 
@@ -362,6 +347,35 @@
             this.roleGV.Name = "roleGV";
             this.roleGV.ReadOnly = true;
             // 
+            // role_textBox
+            // 
+            this.role_textBox.ForeColor = System.Drawing.Color.ForestGreen;
+            this.role_textBox.Location = new System.Drawing.Point(7, 638);
+            this.role_textBox.MaxLength = 40;
+            this.role_textBox.Name = "role_textBox";
+            this.role_textBox.Size = new System.Drawing.Size(389, 27);
+            this.role_textBox.TabIndex = 16;
+            // 
+            // role_label
+            // 
+            this.role_label.AutoSize = true;
+            this.role_label.Location = new System.Drawing.Point(3, 615);
+            this.role_label.Name = "role_label";
+            this.role_label.Size = new System.Drawing.Size(48, 20);
+            this.role_label.TabIndex = 15;
+            this.role_label.Text = "Role :";
+            // 
+            // not_found_label
+            // 
+            this.not_found_label.AutoSize = true;
+            this.not_found_label.Font = new System.Drawing.Font("Segoe UI", 20.2F, System.Drawing.FontStyle.Bold);
+            this.not_found_label.ForeColor = System.Drawing.Color.ForestGreen;
+            this.not_found_label.Location = new System.Drawing.Point(573, 263);
+            this.not_found_label.Name = "not_found_label";
+            this.not_found_label.Size = new System.Drawing.Size(298, 46);
+            this.not_found_label.TabIndex = 2;
+            this.not_found_label.Text = "No record found!";
+            // 
             // users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -378,6 +392,7 @@
             this.top_panel_sample2.ResumeLayout(false);
             this.top_panel_sample2.PerformLayout();
             this.middle_panel_sample2.ResumeLayout(false);
+            this.middle_panel_sample2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.users_dataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -408,5 +423,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phonenumberGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleGV;
+        private System.Windows.Forms.Label not_found_label;
     }
 }
