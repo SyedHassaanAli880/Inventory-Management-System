@@ -363,79 +363,52 @@ namespace inv
                                 // inserting product price:
 
                                 if (SQL_TASKS.insert_update_delete("st_insertPRODUCTPRICE", ht1) > 0) { success = true; } else { success = false; }
+
                             }
                             else //product present
                             {
-                                cmd.CommandText = "select pp_BuyingDate from ProductPrice where pp_BuyingDate='" + DateTime.Today + "' ";
-
-                                sql_con.Open();
-
-                                DateTime productdate = Convert.ToDateTime(cmd.ExecuteScalar());
-
-                                sql_con.Close();
-
-                                if (productdate == DateTime.Today)
-                                {
                                     Hashtable ht2 = new Hashtable();
 
                                     ht2.Add("@prodID", row.Cells["productIDGV"].Value.ToString());
 
-                                    cmd.CommandText = "select pp_buyingPrice from ProductPrice where pp_BuyingDate='" + DateTime.Today + "' ";
+                                    cmd.CommandText = "select pp_buyingPrice from ProductPrice where pp_prodID='" + row.Cells["productIDGV"].Value.ToString() + "' ";
 
                                     sql_con.Open();
 
-                                    Int64 ExistingBuyingPrice = Convert.ToInt64(cmd.ExecuteScalar());
+                                    Int64 ExistingProductBuyingPrice = Convert.ToInt64(cmd.ExecuteScalar());
 
                                     sql_con.Close();
 
-                                    Int64 finalp = Convert.ToInt64(row.Cells["totalGV"].Value) + ExistingBuyingPrice;
+                                    Int64 finalp = Convert.ToInt64(row.Cells["totalGV"].Value) + ExistingProductBuyingPrice;
 
-                                    ht2.Add("@bp", finalp); 
-                                    
-                                    ht2.Add("@sp", DBNull.Value);
+                                Hashtable htx = new Hashtable();
 
-                                    ht2.Add("@buyingdate", DateTime.Today);
+                                htx.Add("@prodID", row.Cells["productIDGV"].Value.ToString());
 
-                                    ht2.Add("@profitper", DBNull.Value);
+                                htx.Add("@bp", finalp);
 
-                                    ht2.Add("@discount", DBNull.Value);
-
-                                    ht2.Add("@productbarcode", row.Cells["productbarcodeGV"].Value.ToString());
-
-                                    // updating product price:
-
-                                    if (SQL_TASKS.insert_update_delete("st_updatePRODUCTPRICEwrtDATE", ht2) > 0) { success = true; } else { success = false; }
+                                if (SQL_TASKS.insert_update_delete("st_updatePRODUCTPRICEforPURCHASEINVOICE", htx) > 0)
+                                {
+                                    success = true;
                                 }
                                 else
                                 {
-                                    Hashtable ht3 = new Hashtable();
-
-                                    ht3.Add("@prodID", row.Cells["productIDGV"].Value.ToString());
-
-                                    ht3.Add("@bp", Convert.ToSingle(row.Cells["totalGV"].Value.ToString()));
-
-                                    ht3.Add("@sp", DBNull.Value);
-
-                                    ht3.Add("@buyingdate", DateTime.Today);
-
-                                    ht3.Add("@productbarcode", row.Cells["productbarcodeGV"].Value.ToString());
-
-                                    //inserting product price:
-
-                                    if (SQL_TASKS.insert_update_delete("st_insertPRODUCTPRICE", ht3) > 0) { success = true; } else { success = false; }
+                                    success = false;
                                 }
+
                             }
 
-                                int q; object stockcount;
+                                int q; 
+                            
+                                object stockcount;
 
                                 bool DoesExist = SQL_TASKS.IfProductExist(Convert.ToInt64(row.Cells["productIDGV"].Value.ToString()));
-                          
 
                             if (DoesExist) //if product does exist
                             {
                                 //update stock
 
-                                stockcount = SQL_TASKS.getProductQuantity(Convert.ToInt32(row.Cells["productIDGV"].Value.ToString()));
+                                stockcount = SQL_TASKS.getProductQuantityfromSTOCK(Convert.ToInt32(row.Cells["productIDGV"].Value.ToString()));
 
                                 q = Convert.ToInt32(stockcount);
 
@@ -449,7 +422,7 @@ namespace inv
 
                                 //updating stock:
 
-                                if (SQL_TASKS.insert_update_delete("st_updateSTOCK", hta) > 0) { success = true;}
+                                if (SQL_TASKS.insert_update_delete("st_updateSTOCK", hta) > 0) { success = true; }
                             }
                             else //if product does not exist
                             {
@@ -463,13 +436,20 @@ namespace inv
 
                                 // inserting stock:
 
-                                if (SQL_TASKS.insert_update_delete("st_insertSTOCK", htb) > 0) { success = true; } else { success = false;}
-                            }
-                            
-                        
+                                if (SQL_TASKS.insert_update_delete("st_insertSTOCK", htb) > 0) 
+                                {
+                                    success = true; 
+                                } 
+                                else 
+                                { 
+                                    success = false; 
+                                }
                             }
 
-                            if (count > 0 && success == true)
+
+                        }
+
+                        if (count > 0 && success == true)
                             {
                                 MainClass.ShowMsg("Purchase Invoice created successfully.", "Success");
 
@@ -680,40 +660,48 @@ namespace inv
 
         private void product_barcode_textBox_purchase_invoice_Validating(object sender, CancelEventArgs e)
         {
-            Hashtable ht = new Hashtable();
-
-            ht.Add("@barcode", product_barcode_textBox_purchase_invoice.Text);
-
-            string[] productswrt = new string[3];
-
-            if (product_barcode_textBox_purchase_invoice.Text != "")
+            try
             {
-                productswrt = loadProductswrtBarcode("st_getPRODUCTbyBarcode", ht);
+                Hashtable ht = new Hashtable();
 
-                productID = Convert.ToInt32(productswrt[0]);
+                ht.Add("@barcode", product_barcode_textBox_purchase_invoice.Text);
 
-                productNAME = productswrt[1];
+                string[] productswrt = new string[3];
 
-                product_name_textBox_purchase_invoice.Text = productNAME;
-
-                productBARCODE = productswrt[2];
-
-                product_name_textBox_purchase_invoice.Enabled = false;
-
-                if (productBARCODE != null)
+                if (product_barcode_textBox_purchase_invoice.Text != "")
                 {
-                    per_unit_price_textBox.Focus();
+                    productswrt = loadProductswrtBarcode("st_getPRODUCTbyBarcodeForPurchaseInvoice", ht);
+
+                    productID = Convert.ToInt32(productswrt[0]);
+
+                    productNAME = productswrt[1];
+
+                    product_name_textBox_purchase_invoice.Text = productNAME;
+
+                    productBARCODE = productswrt[2];
+
+                    product_name_textBox_purchase_invoice.Enabled = false;
+
+                    if (productBARCODE != null)
+                    {
+                        per_unit_price_textBox.Focus();
+                    }
+                }
+                else
+                {
+                    productID = 0;
+
+                    product_name_textBox_purchase_invoice.Text = "";
+
+                    per_unit_price_textBox.Text = "";
+
+                    Array.Clear(productswrt, 0, productswrt.Length);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                productID = 0;
-
-                product_name_textBox_purchase_invoice.Text = "";
-
-                per_unit_price_textBox.Text = "";
-
-                Array.Clear(productswrt, 0, productswrt.Length);
+                MainClass.ShowMsg(ex.Message, "Error");
+               
             }
         }
 

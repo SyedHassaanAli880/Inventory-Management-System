@@ -81,14 +81,18 @@
             // top_panel_sample2
             // 
             this.top_panel_sample2.Location = new System.Drawing.Point(400, 0);
-            this.top_panel_sample2.Size = new System.Drawing.Size(955, 84);
+            this.top_panel_sample2.Size = new System.Drawing.Size(1065, 84);
             // 
             // middle_panel_sample2
             // 
             this.middle_panel_sample2.Controls.Add(this.purchaseinvoice_dataGridView);
             this.middle_panel_sample2.Location = new System.Drawing.Point(400, 84);
-            this.middle_panel_sample2.Size = new System.Drawing.Size(955, 662);
+            this.middle_panel_sample2.Size = new System.Drawing.Size(1065, 662);
             this.middle_panel_sample2.Controls.SetChildIndex(this.purchaseinvoice_dataGridView, 0);
+            // 
+            // search_textBox
+            // 
+            this.search_textBox.Size = new System.Drawing.Size(141, 23);
             // 
             // dateTimePicker_invoicedetails
             // 
@@ -180,7 +184,7 @@
             this.purchaseinvoice_dataGridView.RowHeadersWidth = 51;
             this.purchaseinvoice_dataGridView.RowTemplate.Height = 24;
             this.purchaseinvoice_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.purchaseinvoice_dataGridView.Size = new System.Drawing.Size(955, 607);
+            this.purchaseinvoice_dataGridView.Size = new System.Drawing.Size(1065, 607);
             this.purchaseinvoice_dataGridView.TabIndex = 4;
             this.purchaseinvoice_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.purchaseinvoice_dataGridView_CellClick);
             // 
@@ -297,7 +301,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1355, 746);
+            this.ClientSize = new System.Drawing.Size(1465, 746);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Purchase_Invoice_Details";
             this.Text = "PURCHASE INVOICE DETAILS";

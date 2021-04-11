@@ -47,8 +47,6 @@ namespace inv
 
             lb.Items.Add(productbarcodeGV);
 
-            lb.Items.Add(PerUnitPriceGV);
-
             lb.Items.Add(productbuyingpriceGV);
 
             lb.Items.Add(BuyingDateGV);
@@ -63,13 +61,16 @@ namespace inv
 
             SQL_TASKS.load_data("st_getSTOCK", stocks_dataGridView, lb);
 
-            foreach(DataGridViewRow row in stocks_dataGridView.Rows)
-            {
-                if(Convert.ToInt32(row.Cells["availablestockGV"].Value) == 0)
-                {
-                    row.DefaultCellStyle.BackColor = Color.Red;
-                }
-            }
+            //foreach(DataGridViewRow row in stocks_dataGridView.Rows)
+            //{
+            //    if(Convert.ToInt32(row.Cells["availablestockGV"].Value) == 0)
+            //    {
+            //        stocks_dataGridView.Columns["availablestockGV"].DefaultCellStyle.BackColor = Color.Red;
+
+            //        //row.Cells["availablestockGV"].Style.BackColor = Color.Red;
+            //        //row.DefaultCellStyle.BackColor = Color.Red;
+            //    }
+            //}
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

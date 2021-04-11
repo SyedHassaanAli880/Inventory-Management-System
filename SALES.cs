@@ -164,8 +164,6 @@ namespace inv
                     }
                     else
                     {
-
-
                         if (sales_dataGridView.Rows.Count == 0)
                         {                                               //product ID     //product name //quantity              //sp                        //sp                   //discount    //discount             //fsp                           //fsp
                             sales_dataGridView.Rows.Add(Convert.ToInt32(productswrt[0]), productswrt[1], 1, Convert.ToSingle(productswrt[3]), Convert.ToSingle(productswrt[3]), productswrt[4], productswrt[4], Convert.ToSingle(productswrt[5]), Convert.ToSingle(productswrt[5]));

@@ -48,26 +48,35 @@ namespace inv
 
             purchaseinvoice_dataGridView.AutoGenerateColumns = false;
 
-            /*LoadPurchaseInvoiceDetails()*/; purchaseinvoice_comboBox.SelectedIndex = -1;
+            //LoadPurchaseInvoiceDetails(); 
+            
+            //purchaseinvoice_comboBox.SelectedIndex = -1;
 
-            base.add_button.Visible = false; base.view_button.Visible = false;
+            base.add_button.Visible = false; 
+            
+            base.view_button.Visible = false;
 
-            base.edit_button.Visible = false; base.delete_button.Visible = false;
+            base.edit_button.Visible = false; 
+            
+            base.delete_button.Visible = false;
 
             base.search_groupBox.Visible = false;
 
-            base.save_button.Visible = false; base.cancel_button.Visible = false;
+            base.save_button.Visible = false; 
+            
+            base.cancel_button.Visible = false;
         }
 
         private void dateTimePicker_invoicedetails_ValueChanged(object sender, EventArgs e)
         {
+
             Hashtable ht = new Hashtable();
 
             ht.Add("@month", dateTimePicker_invoicedetails.Value.Month);
 
             ht.Add("@year", dateTimePicker_invoicedetails.Value.Year);
 
-            SQL_TASKS.LoadListModifiedHashTable("st_getPURCHASEINVOICELIST", purchaseinvoice_comboBox,"ID", "Company", ht);
+            SQL_TASKS.LoadListModifiedHashTable("st_getPURCHASEINVOICELIST", purchaseinvoice_comboBox, "ID", "Company", ht);
         }
 
         private void back_button_Click(object sender, EventArgs e)

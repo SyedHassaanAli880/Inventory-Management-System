@@ -141,6 +141,35 @@ namespace inv
             return stockcount;
         }
 
+        public static object getProductQuantityfromSTOCK(int productID)
+        {
+            object stockcount = null;
+
+            var sql_con = new SqlConnection(MainClass.connection());
+            try
+            {
+                var cmd = new SqlCommand("st_getPRODUCTQUANTITYfromSTOCK", sql_con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@prodID", productID);
+
+                sql_con.Open();
+
+                stockcount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                sql_con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+                sql_con.Close();
+            }
+
+            return stockcount;
+        }
+
         public static bool IfProductExist(Int64 ProductID)
         {
             int x = 0;
@@ -442,9 +471,9 @@ namespace inv
 
                 cb.Items.Clear();
 
-                var sql = new SqlConnection(MainClass.connection());
+                SqlConnection sql = new SqlConnection(MainClass.connection());
 
-                var cmd = new SqlCommand(proc, sql);
+                SqlCommand cmd = new SqlCommand(proc, sql);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -453,21 +482,25 @@ namespace inv
                     cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
                 }
 
-                var da = new SqlDataAdapter(cmd);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-                var dt = new DataTable(); 
+                DataTable dt = new DataTable(); 
                 
                 da.Fill(dt);
 
                 DataRow dr = dt.NewRow();
-                    
+
                 dr.ItemArray = new object[] { 0, "Select..." };
 
-                dt.Rows.InsertAt(dr,0);
+                dt.Rows.InsertAt(dr, 0);
 
-                cb.DisplayMember = displayMember; cb.ValueMember = valueMember;
+                cb.DisplayMember = displayMember;
 
-                cb.DataSource = dt; cb.SelectedIndex = -1;
+                cb.ValueMember = valueMember;
+
+                cb.DataSource = dt;
+
+                cb.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -491,11 +524,17 @@ namespace inv
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-                DataTable dt = new DataTable(); da.Fill(dt);
+                DataTable dt = new DataTable(); 
+                
+                da.Fill(dt);
 
-                cb.DisplayMember = displayMember; cb.ValueMember = valueMember;
+                cb.DisplayMember = displayMember; 
+                
+                cb.ValueMember = valueMember;
 
-                cb.DataSource = dt; cb.SelectedIndex = -1;
+                cb.DataSource = dt; 
+                
+                cb.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -519,9 +558,13 @@ namespace inv
                 
                 da.Fill(dt);
 
-                cb.DisplayMember = displayMember; cb.ValueMember = valueMember;
+                cb.DisplayMember = displayMember; 
+                
+                cb.ValueMember = valueMember;
 
-                cb.DataSource = dt; cb.SelectedIndex = -1;
+                cb.DataSource = dt; 
+                
+                cb.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -560,5 +603,7 @@ namespace inv
 
             return res;
         }
+
+        
     }
 }
