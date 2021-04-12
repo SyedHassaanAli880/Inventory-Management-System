@@ -346,11 +346,11 @@ namespace inv
 
                 DataGridViewRow row = categories_dataGridView.Rows[e.RowIndex];
 
-                categoryID = Convert.ToInt32(row.Cells[1].Value.ToString());
+                categoryID = Convert.ToInt32(row.Cells["categoryidGV"].Value.ToString());
 
-                category_name_textBox.Text = row.Cells[2].Value.ToString();
+                category_name_textBox.Text = row.Cells["categorynameGV"].Value.ToString();
 
-                is_active_category_comboBox.Text = row.Cells[3].Value.ToString();
+                is_active_category_comboBox.SelectedValue = row.Cells["categorystatusGV"].Value.ToString();
 
                 disable();
 
@@ -363,6 +363,8 @@ namespace inv
                 cancel_button.Enabled = true;
 
                 view_button.Enabled = true;
+
+                is_active_category_comboBox.Enabled = true;
             }
         }
 

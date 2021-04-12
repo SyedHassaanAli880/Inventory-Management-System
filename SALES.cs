@@ -127,8 +127,8 @@ namespace inv
 
                 string[] productswrt = new string[6];
 
-                if (product_barcode_textBox.Text != "")
-                {
+                    if (product_barcode_textBox.Text != "")
+                    {
                     int qCount = 0, sCount = 0, nCount = 0; productswrt = loadProductswrtBarcode("st_getPRODUCTbyBarcode", ht);
 
                     //st_getPRODUCTbyBarcodeFORSALES
@@ -221,7 +221,7 @@ namespace inv
 
                     }
 
-                }
+                    }
 
 
             }

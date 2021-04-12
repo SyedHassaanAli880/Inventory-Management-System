@@ -92,7 +92,6 @@ namespace inv
             }
         }
 
-
         public void reset_enable()
         {
             product_name_textBox.Text = "";
