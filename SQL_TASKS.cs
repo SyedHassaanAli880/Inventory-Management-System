@@ -170,7 +170,7 @@ namespace inv
             return stockcount;
         }
 
-        public static bool IfProductExist(Int64 ProductID)
+        public static bool IfProductExist(long ProductID)
         {
             int x = 0;
 
