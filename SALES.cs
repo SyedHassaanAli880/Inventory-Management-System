@@ -113,7 +113,7 @@ namespace inv
 
         public override void view_button_Click(object sender, EventArgs e)
         {
-            Sales_Details sd = new Sales_Details(); MainClass.ShowWindow(sd, MDI.ActiveForm);
+            SALES_REPORT sd = new SALES_REPORT(); MainClass.ShowWindow(sd, MDI.ActiveForm);
         }
         private void product_barcode_textBox_Validating(object sender, CancelEventArgs e)
         {
@@ -444,10 +444,10 @@ namespace inv
 
                                 MainClass.disbale_reset(left_panel_sample2); sales_dataGridView.Rows.Clear();
 
-                                //SALES_REPORT sr = new SALES_REPORT();
+                                SALES_REPORT sr = new SALES_REPORT();
 
-                                //sr.Show(); 
-                                
+                                sr.Show();
+
                                 gross_total_price_label.Text = "0.00";
                             }
                             else

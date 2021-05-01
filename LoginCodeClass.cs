@@ -12,7 +12,7 @@ namespace inv
 
         private static string userROLE;
 
-        public static bool isAdmin;
+        public static bool isAdmin = true;
 
         public static string usernameOFadmin, passwordOFadmin;
 

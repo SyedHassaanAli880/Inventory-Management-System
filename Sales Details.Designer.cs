@@ -30,6 +30,7 @@
         {
             this.back_button = new System.Windows.Forms.Button();
             this.load_button = new System.Windows.Forms.Button();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.left_panel.SuspendLayout();
             this.left_top_panel.SuspendLayout();
             this.top_panel.SuspendLayout();
@@ -80,13 +81,36 @@
             this.load_button.UseVisualStyleBackColor = true;
             this.load_button.Click += new System.EventHandler(this.load_button_Click);
             // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(404, 102);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ShowCloseButton = false;
+            this.crystalReportViewer1.ShowCopyButton = false;
+            this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowLogo = false;
+            this.crystalReportViewer1.ShowParameterPanelButton = false;
+            this.crystalReportViewer1.ShowRefreshButton = false;
+            this.crystalReportViewer1.ShowTextSearchButton = false;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(949, 643);
+            this.crystalReportViewer1.TabIndex = 2;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
             // Sales_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 745);
+            this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Sales_Details";
             this.Text = "Sales Details";
+            this.Controls.SetChildIndex(this.left_panel, 0);
+            this.Controls.SetChildIndex(this.top_panel, 0);
+            this.Controls.SetChildIndex(this.crystalReportViewer1, 0);
             this.left_panel.ResumeLayout(false);
             this.left_top_panel.ResumeLayout(false);
             this.left_top_panel.PerformLayout();
@@ -100,5 +124,6 @@
 
         public System.Windows.Forms.Button back_button;
         private System.Windows.Forms.Button load_button;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }

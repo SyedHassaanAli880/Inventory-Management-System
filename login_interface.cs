@@ -37,13 +37,15 @@ namespace inv
                     {
                         if (LoginCodeClass.getlogindetails("st_getAuthenticationDetails", ht, false))
                         {
-                            LoginCodeClass.isAdmin = false;
+                            LoginCodeClass.isAdmin = false; //not admin, common user
 
                             LoginCodeClass.IsLogged = true;
 
-                            var cat = new CATEGORIES();
+                            var sal = new SALES();
 
-                            MainClass.ShowWindow(cat, MDI.ActiveForm);
+                            
+
+                            MainClass.ShowWindow(sal, MDI.ActiveForm);
 
                         }
                     }
@@ -51,7 +53,7 @@ namespace inv
                     {
                         if (LoginCodeClass.getlogindetails("st_getAuthenticationDetailsFromAUTH", ht, true))
                         {
-                            LoginCodeClass.isAdmin = true;
+                            LoginCodeClass.isAdmin = true; //Admin,not common user
 
                             LoginCodeClass.IsLogged = true;
 

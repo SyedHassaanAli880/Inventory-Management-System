@@ -13,7 +13,6 @@ namespace inv
             InitializeComponent();
         }
 
-
         private void logOutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             t = MainClass.temp;

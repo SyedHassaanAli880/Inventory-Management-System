@@ -43,11 +43,13 @@ namespace inv
 
                 rd = new ReportDocument();
 
-                rd.Load(Application.StartupPath + "\\Reports\\CrystalReport1.rpt");
+                rd.Load(Application.StartupPath + "\\Reports\\SaleReport.rpt");
 
                 rd.SetDataSource(dat);
 
-                crv.ReportSource = rd; crv.RefreshReport();
+                crv.ReportSource = rd; 
+                
+                crv.RefreshReport();
             }
             catch (Exception ex)
             {

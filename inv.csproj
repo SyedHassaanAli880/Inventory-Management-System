@@ -124,11 +124,11 @@
     <Compile Include="PURCHASE INVOICE.Designer.cs">
       <DependentUpon>PURCHASE INVOICE.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sales Details.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sales Details.Designer.cs">
-      <DependentUpon>Sales Details.cs</DependentUpon>
+    <Compile Include="SaleReport.cs">
+      <DependentUpon>SaleReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="SALES REPORT.cs">
       <SubType>Form</SubType>
@@ -217,8 +217,9 @@
     <EmbeddedResource Include="PURCHASE INVOICE.resx">
       <DependentUpon>PURCHASE INVOICE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sales Details.resx">
-      <DependentUpon>Sales Details.cs</DependentUpon>
+    <EmbeddedResource Include="SaleReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SALES REPORT.resx">
       <DependentUpon>SALES REPORT.cs</DependentUpon>
