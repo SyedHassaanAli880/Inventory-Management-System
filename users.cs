@@ -92,8 +92,6 @@ namespace inv
 
             lb.Items.Add(phonenumberGV);
 
-            
-
             lb.Items.Add(statusGV);
 
             lb.Items.Add(roleGV);
@@ -113,6 +111,7 @@ namespace inv
 
             save_button.Enabled = true;
         }
+
         private void users_Load(object sender, EventArgs e)
         {
             loadUsers();

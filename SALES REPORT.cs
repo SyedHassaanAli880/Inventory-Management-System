@@ -19,7 +19,15 @@ namespace inv
 
         private void SALES_REPORT_Load(object sender, EventArgs e)
         {
-            SQL_TASKS.ShowReport(crystalReportViewer1, "st_getSalesReceipt", "@userID", LoginCodeClass.USERID);
+            if(Sales_Invoice_Details.SaleID == 0)
+            {
+                SQL_TASKS.ShowReport(crystalReportViewer1, "st_getSalesReceipt", "@userID", LoginCodeClass.USERID);
+            }
+            else
+            {
+                SQL_TASKS.ShowReport(crystalReportViewer1, "st_getSalesReceiptwrtSalesID", "@saleID", Sales_Invoice_Details.SaleID);
+            }
+            
         }
     }
 }

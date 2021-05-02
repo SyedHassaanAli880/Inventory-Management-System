@@ -113,7 +113,9 @@ namespace inv
 
         public override void view_button_Click(object sender, EventArgs e)
         {
-            SALES_REPORT sd = new SALES_REPORT(); MainClass.ShowWindow(sd, MDI.ActiveForm);
+            Sales_Invoice_Details sd = new Sales_Invoice_Details(); 
+            
+            MainClass.ShowWindow(sd, MDI.ActiveForm);
         }
         private void product_barcode_textBox_Validating(object sender, CancelEventArgs e)
         {
