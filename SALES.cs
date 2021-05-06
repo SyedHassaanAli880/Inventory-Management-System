@@ -131,97 +131,99 @@ namespace inv
 
                     if (product_barcode_textBox.Text != "")
                     {
-                    int qCount = 0, sCount = 0, nCount = 0; productswrt = loadProductswrtBarcode("st_getPRODUCTbyBarcode", ht);
+                        int qCount = 0, sCount = 0, nCount = 0; 
+                    
+                        productswrt = loadProductswrtBarcode("st_getPRODUCTbyBarcode", ht);
 
-                    //st_getPRODUCTbyBarcodeFORSALES
+                        //st_getPRODUCTbyBarcodeFORSALES
 
-                    product_barcode_textBox.Text = "";
+                        product_barcode_textBox.Text = "";
 
-                    gross_textBox.Text = "";
+                        gross_textBox.Text = "";
 
-                    discount_textBox.Text = "";
+                        discount_textBox.Text = "";
 
-                    amount_given_textBox.Text = "";
+                        amount_given_textBox.Text = "";
 
-                    change_to_give_textBox.Text = "";
+                        change_to_give_textBox.Text = "";
 
-                    payment_Type_comboBox.SelectedIndex = -1;
+                        payment_Type_comboBox.SelectedIndex = -1;
 
-                    foreach (DataGridViewRow row in sales_dataGridView.Rows)
-                    {
-                        if (row.Cells["productIDGV"].Value.ToString() == productswrt[0])
+                        foreach (DataGridViewRow row in sales_dataGridView.Rows)
                         {
-                            qCount = qCount + Convert.ToInt32(row.Cells["productquantityGV"].Value.ToString());
+                            if (row.Cells["productIDGV"].Value.ToString() == productswrt[0])
+                            {
+                                qCount = qCount + Convert.ToInt32(row.Cells["productquantityGV"].Value.ToString());
+                            }
+
                         }
 
-                    }
+                        sCount = SQL_TASKS.getStockwrtProduct(Convert.ToInt32(productswrt[0]));
 
-                    sCount = SQL_TASKS.getStockwrtProduct(Convert.ToInt32(productswrt[0]));
+                        nCount = sCount - qCount;
 
-                    nCount = sCount - qCount;
-
-                    if (nCount <= 0)
-                    {
-                        throw new Exception("Product Quanity is finished in stock.");
-                    }
-                    else
-                    {
+                        if (nCount <= 0)
+                        {
+                            throw new Exception("Product Quanity is finished in stock.");
+                        }
+                        else
+                        {
                         if (sales_dataGridView.Rows.Count == 0)
                         {                                               //product ID     //product name //quantity              //sp                        //sp                   //discount    //discount             //fsp                           //fsp
                             sales_dataGridView.Rows.Add(Convert.ToInt32(productswrt[0]), productswrt[1], 1, Convert.ToSingle(productswrt[3]), Convert.ToSingle(productswrt[3]), productswrt[4], productswrt[4], Convert.ToSingle(productswrt[5]), Convert.ToSingle(productswrt[5]));
                         }
                         else
                         {
-                            foreach (DataGridViewRow row in sales_dataGridView.Rows)
-                            {
-                                if (row.Cells["productIDGV"].Value.ToString() == productswrt[0])
-                                {
-                                    productcheck = true; break;
-                                }
-                                else { productcheck = false; }
-                            }
-
-                            if (productcheck)
-                            {
                                 foreach (DataGridViewRow row in sales_dataGridView.Rows)
                                 {
                                     if (row.Cells["productIDGV"].Value.ToString() == productswrt[0])
                                     {
-                                        float disc = 0;
-
-                                        row.Cells["productquantityGV"].Value = Convert.ToInt32(row.Cells["productquantityGV"].Value) + 1;
-
-                                        if (row.Cells["discountGV"].Value.ToString() != null)
-                                        {
-                                            disc = Convert.ToSingle(row.Cells["discountGVDUP"].Value.ToString()) * Convert.ToSingle(row.Cells["productquantityGV"].Value.ToString());
-
-                                            row.Cells["discountGV"].Value = disc;
-                                        }
-
-                                        float sp = Convert.ToSingle(row.Cells["SellingPriceGVDUP"].Value) * Convert.ToInt64(row.Cells["productquantityGV"].Value);
-
-                                        float tot = (sp - Convert.ToSingle(row.Cells["discountGV"].Value.ToString()));
-
-                                        row.Cells["FinalSellingPriceGV"].Value = tot; row.Cells["SellingPriceGV"].Value = sp;
-
+                                        productcheck = true; break;
                                     }
+                                    else { productcheck = false; }
                                 }
-                            }                                     //product ID                  //product name      //quantity              //sp                                    //sp                   //discount       //discount             //fsp                           //fsp
-                            else { sales_dataGridView.Rows.Add(Convert.ToInt32(productswrt[0]), productswrt[1], 1, Convert.ToSingle(productswrt[3]), Convert.ToSingle(productswrt[3]), productswrt[4], productswrt[4], Convert.ToSingle(productswrt[5]), Convert.ToSingle(productswrt[5])); }
 
+                                if (productcheck)
+                                {
+                                    foreach (DataGridViewRow row in sales_dataGridView.Rows)
+                                    {
+                                        if (row.Cells["productIDGV"].Value.ToString() == productswrt[0])
+                                        {
+                                            float disc = 0;
+
+                                            row.Cells["productquantityGV"].Value = Convert.ToInt32(row.Cells["productquantityGV"].Value) + 1;
+
+                                            if (row.Cells["discountGV"].Value.ToString() != null)
+                                            {
+                                                disc = Convert.ToSingle(row.Cells["discountGVDUP"].Value.ToString()) * Convert.ToSingle(row.Cells["productquantityGV"].Value.ToString());
+
+                                                row.Cells["discountGV"].Value = disc;
+                                            }
+
+                                            float sp = Convert.ToSingle(row.Cells["SellingPriceGVDUP"].Value) * Convert.ToInt64(row.Cells["productquantityGV"].Value);
+
+                                            float tot = (sp - Convert.ToSingle(row.Cells["discountGV"].Value.ToString()));
+
+                                            row.Cells["FinalSellingPriceGV"].Value = tot; row.Cells["SellingPriceGV"].Value = sp;
+
+                                        }
+                                    }
+                                }                                     //product ID                  //product name      //quantity              //sp                                    //sp                   //discount       //discount             //fsp                           //fsp
+                                else { sales_dataGridView.Rows.Add(Convert.ToInt32(productswrt[0]), productswrt[1], 1, Convert.ToSingle(productswrt[3]), Convert.ToSingle(productswrt[3]), productswrt[4], productswrt[4], Convert.ToSingle(productswrt[5]), Convert.ToSingle(productswrt[5])); }
+
+
+                            }
+
+                            foreach (DataGridViewRow row2 in sales_dataGridView.Rows)
+                            {
+                                gross += Convert.ToSingle(row2.Cells["FinalSellingPriceGV"].Value.ToString());
+                            }
+
+                            gross_total_price_label.Text = Math.Round(gross,0).ToString(); gross = 0;
+
+                            product_barcode_textBox.Focus(); product_barcode_textBox.Text = "";
 
                         }
-
-                        foreach (DataGridViewRow row2 in sales_dataGridView.Rows)
-                        {
-                            gross += Convert.ToSingle(row2.Cells["FinalSellingPriceGV"].Value.ToString());
-                        }
-
-                        gross_total_price_label.Text = Math.Round(gross,0).ToString(); gross = 0;
-
-                        product_barcode_textBox.Focus(); product_barcode_textBox.Text = "";
-
-                    }
 
                     }
 
@@ -440,11 +442,23 @@ namespace inv
                                     ht1.Add("@quan", x);
 
                                     SQL_TASKS.insert_update_delete("st_updateSTOCK", ht1);
+
+                                    Hashtable ht2 = new Hashtable();
+
+                                    ht2.Add("@saleID",SQL_TASKS.getLASTID("st_getSalesID"));
+
+                                    ht2.Add("@prodID",Convert.ToInt64(row.Cells["productIDGV"].Value.ToString()));
+
+                                    ht2.Add("@quantity", Convert.ToInt32(row.Cells["productquantityGV"].Value.ToString()));
+
+                                    SQL_TASKS.insert_update_delete("st_insertSalesDetails", ht2);
                                 }
 
                                 MainClass.ShowMsg("Record saved successfully.", "Success");
 
-                                MainClass.disbale_reset(left_panel_sample2); sales_dataGridView.Rows.Clear();
+                                MainClass.disbale_reset(left_panel_sample2); 
+                                
+                                sales_dataGridView.Rows.Clear();
 
                                 SALES_REPORT sr = new SALES_REPORT();
 

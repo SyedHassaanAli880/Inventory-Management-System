@@ -38,7 +38,7 @@ namespace inv
 
             lb.Items.Add(TotalDiscountGV);
 
-            lb.Items.Add(UserIDGV);
+            lb.Items.Add(UserIDGV); 
 
             SQL_TASKS.load_data("st_GetDailySales", sales_details_dataGridView, lb,ht);
         }
@@ -48,7 +48,7 @@ namespace inv
             LoadSalesDetails();
         }
 
-        public static int SaleID;
+        public static int SaleID=0;
 
         private void sales_details_dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -56,7 +56,7 @@ namespace inv
             {
                 var row = sales_details_dataGridView.Rows[e.RowIndex];
 
-                SaleID = Convert.ToInt32(row.Cells["UserIDGV"].Value.ToString());
+                SaleID = Convert.ToInt32(row.Cells["saleIDGV"].Value.ToString());
 
                 var sr = new SALES_REPORT();
 

@@ -26,6 +26,8 @@ namespace inv
             else
             {
                 SQL_TASKS.ShowReport(crystalReportViewer1, "st_getSalesReceiptwrtSalesID", "@saleID", Sales_Invoice_Details.SaleID);
+
+                Sales_Invoice_Details.SaleID = 0;
             }
             
         }
