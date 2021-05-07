@@ -70,8 +70,7 @@ namespace inv
                     user_textBox.Text = sales_return_dataGridView.Rows[0].Cells["UserGV"].Value.ToString();
 
                     paymentType_textBox.Text = sales_return_dataGridView.Rows[0].Cells["PaymentGV"].Value.ToString();
-                
-                    amoun
+
                 }
                 else
                 {

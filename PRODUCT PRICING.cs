@@ -181,6 +181,7 @@ namespace inv
                 LoadProducts();
             }
         }
+        
         Regex rg = new Regex(@"^[0-9]*(?:\.[0-9]*)?$");
 
         private void product_pricing_dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)

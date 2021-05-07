@@ -42,16 +42,6 @@
             this.gross_total_price_label = new System.Windows.Forms.Label();
             this.gross_total_label_display = new System.Windows.Forms.Label();
             this.sales_dataGridView = new System.Windows.Forms.DataGridView();
-            this.productIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productnameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productquantityGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SellingPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SellingPriceGVDUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiscountGVDUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FinalSellingPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FinalSellingPriceGVDUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deleteGV = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gross_textBox = new System.Windows.Forms.TextBox();
             this.gross_total_label = new System.Windows.Forms.Label();
             this.discount_textBox = new System.Windows.Forms.TextBox();
@@ -64,6 +54,16 @@
             this.payment_Type_comboBox = new System.Windows.Forms.ComboBox();
             this.pay_button = new System.Windows.Forms.Button();
             this.check_out_button = new System.Windows.Forms.Button();
+            this.productIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productnameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productquantityGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SellingPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SellingPriceGVDUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscountGVDUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FinalSellingPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FinalSellingPriceGVDUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteGV = new System.Windows.Forms.DataGridViewButtonColumn();
             this.left_panel_sample2.SuspendLayout();
             this.top_left_panel_sample2.SuspendLayout();
             this.top_panel_sample2.SuspendLayout();
@@ -127,10 +127,6 @@
             // search_textBox
             // 
             this.search_textBox.Size = new System.Drawing.Size(133, 23);
-            // 
-            // back_button
-            // 
-            
             // 
             // welcome_label
             // 
@@ -230,112 +226,6 @@
             this.sales_dataGridView.Size = new System.Drawing.Size(997, 615);
             this.sales_dataGridView.TabIndex = 4;
             this.sales_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sales_dataGridView_CellClick);
-            // 
-            // productIDGV
-            // 
-            this.productIDGV.HeaderText = "Product ID";
-            this.productIDGV.MinimumWidth = 6;
-            this.productIDGV.Name = "productIDGV";
-            this.productIDGV.ReadOnly = true;
-            this.productIDGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.productIDGV.Visible = false;
-            // 
-            // productnameGV
-            // 
-            this.productnameGV.HeaderText = "Product Name";
-            this.productnameGV.MinimumWidth = 6;
-            this.productnameGV.Name = "productnameGV";
-            this.productnameGV.ReadOnly = true;
-            this.productnameGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // productquantityGV
-            // 
-            this.productquantityGV.HeaderText = "Product Quantity";
-            this.productquantityGV.MinimumWidth = 6;
-            this.productquantityGV.Name = "productquantityGV";
-            this.productquantityGV.ReadOnly = true;
-            this.productquantityGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // SellingPriceGV
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.SellingPriceGV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.SellingPriceGV.HeaderText = "Selling Price (In rupees)";
-            this.SellingPriceGV.MinimumWidth = 6;
-            this.SellingPriceGV.Name = "SellingPriceGV";
-            this.SellingPriceGV.ReadOnly = true;
-            this.SellingPriceGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // SellingPriceGVDUP
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.SellingPriceGVDUP.DefaultCellStyle = dataGridViewCellStyle3;
-            this.SellingPriceGVDUP.HeaderText = "Selling Price(Duplicate)";
-            this.SellingPriceGVDUP.MinimumWidth = 6;
-            this.SellingPriceGVDUP.Name = "SellingPriceGVDUP";
-            this.SellingPriceGVDUP.ReadOnly = true;
-            this.SellingPriceGVDUP.Visible = false;
-            // 
-            // discountGV
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.discountGV.DefaultCellStyle = dataGridViewCellStyle4;
-            this.discountGV.HeaderText = "Discount (In rupees)";
-            this.discountGV.MinimumWidth = 6;
-            this.discountGV.Name = "discountGV";
-            this.discountGV.ReadOnly = true;
-            // 
-            // DiscountGVDUP
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.DiscountGVDUP.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DiscountGVDUP.HeaderText = "Discount(Duplicate)";
-            this.DiscountGVDUP.MinimumWidth = 6;
-            this.DiscountGVDUP.Name = "DiscountGVDUP";
-            this.DiscountGVDUP.ReadOnly = true;
-            this.DiscountGVDUP.Visible = false;
-            // 
-            // FinalSellingPriceGV
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.FinalSellingPriceGV.DefaultCellStyle = dataGridViewCellStyle6;
-            this.FinalSellingPriceGV.HeaderText = "Final Selling Price (In rupees)";
-            this.FinalSellingPriceGV.MinimumWidth = 6;
-            this.FinalSellingPriceGV.Name = "FinalSellingPriceGV";
-            this.FinalSellingPriceGV.ReadOnly = true;
-            this.FinalSellingPriceGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // FinalSellingPriceGVDUP
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.FinalSellingPriceGVDUP.DefaultCellStyle = dataGridViewCellStyle7;
-            this.FinalSellingPriceGVDUP.HeaderText = "Final Selling Price (Duplicate)";
-            this.FinalSellingPriceGVDUP.MinimumWidth = 6;
-            this.FinalSellingPriceGVDUP.Name = "FinalSellingPriceGVDUP";
-            this.FinalSellingPriceGVDUP.ReadOnly = true;
-            this.FinalSellingPriceGVDUP.Visible = false;
-            // 
-            // deleteGV
-            // 
-            this.deleteGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.deleteGV.HeaderText = "Action";
-            this.deleteGV.MinimumWidth = 6;
-            this.deleteGV.Name = "deleteGV";
-            this.deleteGV.ReadOnly = true;
-            this.deleteGV.Text = "DELETE";
-            this.deleteGV.UseColumnTextForButtonValue = true;
             // 
             // gross_textBox
             // 
@@ -465,6 +355,112 @@
             this.check_out_button.UseVisualStyleBackColor = true;
             this.check_out_button.Click += new System.EventHandler(this.check_out_button_Click);
             // 
+            // productIDGV
+            // 
+            this.productIDGV.HeaderText = "Product ID";
+            this.productIDGV.MinimumWidth = 6;
+            this.productIDGV.Name = "productIDGV";
+            this.productIDGV.ReadOnly = true;
+            this.productIDGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.productIDGV.Visible = false;
+            // 
+            // productnameGV
+            // 
+            this.productnameGV.HeaderText = "Product";
+            this.productnameGV.MinimumWidth = 6;
+            this.productnameGV.Name = "productnameGV";
+            this.productnameGV.ReadOnly = true;
+            this.productnameGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // productquantityGV
+            // 
+            this.productquantityGV.HeaderText = "Product Quantity";
+            this.productquantityGV.MinimumWidth = 6;
+            this.productquantityGV.Name = "productquantityGV";
+            this.productquantityGV.ReadOnly = true;
+            this.productquantityGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // SellingPriceGV
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.SellingPriceGV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.SellingPriceGV.HeaderText = "Selling Price (In rupees)";
+            this.SellingPriceGV.MinimumWidth = 6;
+            this.SellingPriceGV.Name = "SellingPriceGV";
+            this.SellingPriceGV.ReadOnly = true;
+            this.SellingPriceGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // SellingPriceGVDUP
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.SellingPriceGVDUP.DefaultCellStyle = dataGridViewCellStyle3;
+            this.SellingPriceGVDUP.HeaderText = "Selling Price(Duplicate)";
+            this.SellingPriceGVDUP.MinimumWidth = 6;
+            this.SellingPriceGVDUP.Name = "SellingPriceGVDUP";
+            this.SellingPriceGVDUP.ReadOnly = true;
+            this.SellingPriceGVDUP.Visible = false;
+            // 
+            // discountGV
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.discountGV.DefaultCellStyle = dataGridViewCellStyle4;
+            this.discountGV.HeaderText = "Discount (In rupees)";
+            this.discountGV.MinimumWidth = 6;
+            this.discountGV.Name = "discountGV";
+            this.discountGV.ReadOnly = true;
+            // 
+            // DiscountGVDUP
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.DiscountGVDUP.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DiscountGVDUP.HeaderText = "Discount(Duplicate)";
+            this.DiscountGVDUP.MinimumWidth = 6;
+            this.DiscountGVDUP.Name = "DiscountGVDUP";
+            this.DiscountGVDUP.ReadOnly = true;
+            this.DiscountGVDUP.Visible = false;
+            // 
+            // FinalSellingPriceGV
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.FinalSellingPriceGV.DefaultCellStyle = dataGridViewCellStyle6;
+            this.FinalSellingPriceGV.HeaderText = "Final Selling Price (In rupees)";
+            this.FinalSellingPriceGV.MinimumWidth = 6;
+            this.FinalSellingPriceGV.Name = "FinalSellingPriceGV";
+            this.FinalSellingPriceGV.ReadOnly = true;
+            this.FinalSellingPriceGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // FinalSellingPriceGVDUP
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.FinalSellingPriceGVDUP.DefaultCellStyle = dataGridViewCellStyle7;
+            this.FinalSellingPriceGVDUP.HeaderText = "Final Selling Price (Duplicate)";
+            this.FinalSellingPriceGVDUP.MinimumWidth = 6;
+            this.FinalSellingPriceGVDUP.Name = "FinalSellingPriceGVDUP";
+            this.FinalSellingPriceGVDUP.ReadOnly = true;
+            this.FinalSellingPriceGVDUP.Visible = false;
+            // 
+            // deleteGV
+            // 
+            this.deleteGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.deleteGV.HeaderText = "Action";
+            this.deleteGV.MinimumWidth = 6;
+            this.deleteGV.Name = "deleteGV";
+            this.deleteGV.ReadOnly = true;
+            this.deleteGV.Text = "DELETE";
+            this.deleteGV.UseColumnTextForButtonValue = true;
+            // 
             // SALES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -493,16 +489,6 @@
         private System.Windows.Forms.Label gross_total_price_label;
         private System.Windows.Forms.Label gross_total_label_display;
         private System.Windows.Forms.DataGridView sales_dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productnameGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productquantityGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SellingPriceGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SellingPriceGVDUP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn discountGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiscountGVDUP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FinalSellingPriceGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FinalSellingPriceGVDUP;
-        private System.Windows.Forms.DataGridViewButtonColumn deleteGV;
         private System.Windows.Forms.Label payment_type_label;
         private System.Windows.Forms.TextBox change_to_give_textBox;
         private System.Windows.Forms.Label change_to_give_label;
@@ -515,5 +501,15 @@
         private System.Windows.Forms.ComboBox payment_Type_comboBox;
         private System.Windows.Forms.Button pay_button;
         private System.Windows.Forms.Button check_out_button;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productnameGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productquantityGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SellingPriceGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SellingPriceGVDUP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discountGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiscountGVDUP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FinalSellingPriceGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FinalSellingPriceGVDUP;
+        private System.Windows.Forms.DataGridViewButtonColumn deleteGV;
     }
 }
