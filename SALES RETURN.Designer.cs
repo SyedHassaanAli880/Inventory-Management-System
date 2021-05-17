@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sale_ID_textBox = new System.Windows.Forms.TextBox();
             this.product_barcode_label = new System.Windows.Forms.Label();
             this.load_button = new System.Windows.Forms.Button();
@@ -45,6 +45,8 @@
             this.amount_to_refund_textBox = new System.Windows.Forms.TextBox();
             this.amount_To_refund_label = new System.Windows.Forms.Label();
             this.sales_return_dataGridView = new System.Windows.Forms.DataGridView();
+            this.total_amount_label = new System.Windows.Forms.Label();
+            this.total_discount_label = new System.Windows.Forms.Label();
             this.saleIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BarcodeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,8 +59,10 @@
             this.ProductPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PerProductDiscountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PerProductTotalGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.return_button = new System.Windows.Forms.Button();
             this.left_panel_sample2.SuspendLayout();
             this.top_left_panel_sample2.SuspendLayout();
             this.top_panel_sample2.SuspendLayout();
@@ -68,6 +72,9 @@
             // 
             // left_panel_sample2
             // 
+            this.left_panel_sample2.Controls.Add(this.return_button);
+            this.left_panel_sample2.Controls.Add(this.total_discount_label);
+            this.left_panel_sample2.Controls.Add(this.total_amount_label);
             this.left_panel_sample2.Controls.Add(this.amount_to_refund_textBox);
             this.left_panel_sample2.Controls.Add(this.amount_To_refund_label);
             this.left_panel_sample2.Controls.Add(this.barcode_textBox);
@@ -96,6 +103,9 @@
             this.left_panel_sample2.Controls.SetChildIndex(this.barcode_textBox, 0);
             this.left_panel_sample2.Controls.SetChildIndex(this.amount_To_refund_label, 0);
             this.left_panel_sample2.Controls.SetChildIndex(this.amount_to_refund_textBox, 0);
+            this.left_panel_sample2.Controls.SetChildIndex(this.total_amount_label, 0);
+            this.left_panel_sample2.Controls.SetChildIndex(this.total_discount_label, 0);
+            this.left_panel_sample2.Controls.SetChildIndex(this.return_button, 0);
             // 
             // top_left_panel_sample2
             // 
@@ -232,7 +242,7 @@
             // 
             this.amount_to_refund_textBox.Enabled = false;
             this.amount_to_refund_textBox.ForeColor = System.Drawing.Color.ForestGreen;
-            this.amount_to_refund_textBox.Location = new System.Drawing.Point(5, 572);
+            this.amount_to_refund_textBox.Location = new System.Drawing.Point(8, 600);
             this.amount_to_refund_textBox.MaxLength = 40;
             this.amount_to_refund_textBox.Name = "amount_to_refund_textBox";
             this.amount_to_refund_textBox.Size = new System.Drawing.Size(389, 27);
@@ -241,7 +251,7 @@
             // amount_To_refund_label
             // 
             this.amount_To_refund_label.AutoSize = true;
-            this.amount_To_refund_label.Location = new System.Drawing.Point(1, 549);
+            this.amount_To_refund_label.Location = new System.Drawing.Point(4, 577);
             this.amount_To_refund_label.Name = "amount_To_refund_label";
             this.amount_To_refund_label.Size = new System.Drawing.Size(151, 20);
             this.amount_To_refund_label.TabIndex = 56;
@@ -256,14 +266,14 @@
             this.sales_return_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.sales_return_dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.sales_return_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sales_return_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sales_return_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.sales_return_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sales_return_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.saleIDGV,
@@ -278,34 +288,55 @@
             this.ProductPriceGV,
             this.PerProductDiscountGV,
             this.PerProductTotalGV,
-            this.UserGV,
-            this.PaymentGV});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.sales_return_dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.UserIDGV,
+            this.PaymentGV,
+            this.ProductIDGV});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.sales_return_dataGridView.DefaultCellStyle = dataGridViewCellStyle11;
             this.sales_return_dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sales_return_dataGridView.Location = new System.Drawing.Point(0, 55);
             this.sales_return_dataGridView.Name = "sales_return_dataGridView";
             this.sales_return_dataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sales_return_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sales_return_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.sales_return_dataGridView.RowHeadersVisible = false;
             this.sales_return_dataGridView.RowHeadersWidth = 51;
             this.sales_return_dataGridView.RowTemplate.Height = 24;
             this.sales_return_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.sales_return_dataGridView.Size = new System.Drawing.Size(953, 617);
             this.sales_return_dataGridView.TabIndex = 6;
+            // 
+            // total_amount_label
+            // 
+            this.total_amount_label.AutoSize = true;
+            this.total_amount_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.total_amount_label.Location = new System.Drawing.Point(12, 630);
+            this.total_amount_label.Name = "total_amount_label";
+            this.total_amount_label.Size = new System.Drawing.Size(164, 28);
+            this.total_amount_label.TabIndex = 58;
+            this.total_amount_label.Text = "Total Amount: 0";
+            // 
+            // total_discount_label
+            // 
+            this.total_discount_label.AutoSize = true;
+            this.total_discount_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.total_discount_label.Location = new System.Drawing.Point(13, 676);
+            this.total_discount_label.Name = "total_discount_label";
+            this.total_discount_label.Size = new System.Drawing.Size(172, 28);
+            this.total_discount_label.TabIndex = 59;
+            this.total_discount_label.Text = "Total Discount: 0";
             // 
             // saleIDGV
             // 
@@ -342,6 +373,7 @@
             this.TotalDiscountGV.MinimumWidth = 6;
             this.TotalDiscountGV.Name = "TotalDiscountGV";
             this.TotalDiscountGV.ReadOnly = true;
+            this.TotalDiscountGV.Visible = false;
             // 
             // TotalAmountGV
             // 
@@ -349,6 +381,7 @@
             this.TotalAmountGV.MinimumWidth = 6;
             this.TotalAmountGV.Name = "TotalAmountGV";
             this.TotalAmountGV.ReadOnly = true;
+            this.TotalAmountGV.Visible = false;
             // 
             // AmountGivenGV
             // 
@@ -395,13 +428,13 @@
             this.PerProductTotalGV.Name = "PerProductTotalGV";
             this.PerProductTotalGV.ReadOnly = true;
             // 
-            // UserGV
+            // UserIDGV
             // 
-            this.UserGV.HeaderText = "User";
-            this.UserGV.MinimumWidth = 6;
-            this.UserGV.Name = "UserGV";
-            this.UserGV.ReadOnly = true;
-            this.UserGV.Visible = false;
+            this.UserIDGV.HeaderText = "User ID";
+            this.UserIDGV.MinimumWidth = 6;
+            this.UserIDGV.Name = "UserIDGV";
+            this.UserIDGV.ReadOnly = true;
+            this.UserIDGV.Visible = false;
             // 
             // PaymentGV
             // 
@@ -411,6 +444,28 @@
             this.PaymentGV.ReadOnly = true;
             this.PaymentGV.Visible = false;
             // 
+            // ProductIDGV
+            // 
+            this.ProductIDGV.HeaderText = "Product ID";
+            this.ProductIDGV.MinimumWidth = 6;
+            this.ProductIDGV.Name = "ProductIDGV";
+            this.ProductIDGV.ReadOnly = true;
+            this.ProductIDGV.Visible = false;
+            // 
+            // return_button
+            // 
+            this.return_button.FlatAppearance.BorderSize = 2;
+            this.return_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.return_button.ForeColor = System.Drawing.Color.White;
+            this.return_button.Location = new System.Drawing.Point(5, 532);
+            this.return_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.return_button.Name = "return_button";
+            this.return_button.Size = new System.Drawing.Size(369, 32);
+            this.return_button.TabIndex = 60;
+            this.return_button.Text = "&RETRUN ";
+            this.return_button.UseVisualStyleBackColor = true;
+            this.return_button.Click += new System.EventHandler(this.return_button_Click);
+            // 
             // SALES_RETURN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -418,7 +473,7 @@
             this.ClientSize = new System.Drawing.Size(1353, 756);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "SALES_RETURN";
-            this.Text = "SALES_RETURN";
+            this.Text = "SALES RETURN";
             this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.Load += new System.EventHandler(this.SALES_RETURN_Load);
             this.left_panel_sample2.ResumeLayout(false);
@@ -449,6 +504,8 @@
         private System.Windows.Forms.TextBox amount_to_refund_textBox;
         private System.Windows.Forms.Label amount_To_refund_label;
         private System.Windows.Forms.DataGridView sales_return_dataGridView;
+        private System.Windows.Forms.Label total_amount_label;
+        private System.Windows.Forms.Label total_discount_label;
         private System.Windows.Forms.DataGridViewTextBoxColumn saleIDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn BarcodeGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductGV;
@@ -461,7 +518,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductPriceGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn PerProductDiscountGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn PerProductTotalGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserIDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductIDGV;
+        private System.Windows.Forms.Button return_button;
     }
 }

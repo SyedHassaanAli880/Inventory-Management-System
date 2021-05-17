@@ -114,7 +114,7 @@ namespace inv
             return ISproductEXISTPRICE;
         }
 
-        public static object getProductQuantity(int productID)
+        public static object getProductQuantity(Int64 productID)
         {
             object stockcount = null;
 
@@ -143,7 +143,7 @@ namespace inv
             return stockcount;
         }
 
-        public static object getProductQuantityfromSTOCK(int productID)
+        public static object getProductQuantityfromSTOCK(Int64 productID)
         {
             object stockcount = null;
 
