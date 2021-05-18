@@ -64,6 +64,7 @@ namespace inv
             base.cancel_button.Visible = false;
             base.view_button.Visible = false;
             base.add_button.Visible = false;
+            base.search_groupBox.Visible = false;
         }
 
         Regex rg = new Regex("^[0-9]+$");
@@ -330,6 +331,7 @@ namespace inv
         {
             try
             {
+
                 bool found = false;
 
                 if (barcode_textBox.Text != "")
@@ -376,63 +378,64 @@ namespace inv
                                             throw new Exception("Something went wrong");
                                         }
 
+
                                         //----------------------UPDATING STOCK------------------
 
                                         int currentQuantity = (int)SQL_TASKS.getProductQuantityfromSTOCK(Convert.ToInt64((row.Cells["ProductIDGV"].Value.ToString())));
 
                                         int finalQuantity = currentQuantity - Convert.ToInt32(row.Cells["QuantityGV"].Value.ToString());
 
-                                        Hashtable htinsetrStock = new Hashtable();
+                                        Hashtable htinsertStock = new Hashtable();
 
-                                        htinsetrStock.Add("@prodID", Convert.ToInt64(row.Cells["ProductIDGV"].Value.ToString()));
+                                        htinsertStock.Add("@prodID", row.Cells["ProductIDGV"].Value.ToString());
 
-                                        htinsetrStock.Add("@quan", finalQuantity);
+                                        htinsertStock.Add("@quan", finalQuantity);
 
-                                        SQL_TASKS.insert_update_delete("st_updateSTOCK", htinsetrStock);
+                                        SQL_TASKS.insert_update_delete("st_updateSTOCK", htinsertStock);
 
-                                        //Int64 productID = Convert.ToInt64(row.Cells["ProductIDGV"].Value.ToString());
+                                        Int64 productID = Convert.ToInt64(row.Cells["ProductIDGV"].Value.ToString());
 
-                                        //float productPrice = Convert.ToSingle(row.Cells["ProductPriceGV"].Value.ToString());
+                                        float productPrice = Convert.ToSingle(row.Cells["ProductPriceGV"].Value.ToString());
 
-                                        //int product_quantity = Convert.ToInt32(row.Cells["QuantityGV"].Value.ToString());
+                                        int product_quantity = Convert.ToInt32(row.Cells["QuantityGV"].Value.ToString());
 
-                                        //amount_refund += productPrice;
+                                        amount_refund += productPrice;
 
-                                        //amount_to_refund_textBox.Text = Math.Round(amount_refund, 0).ToString();
+                                        amount_to_refund_textBox.Text = Math.Round(amount_refund, 0).ToString();
 
-                                        //if (product_quantity == 0)
-                                        //{
-                                        //    if (ht.ContainsKey(row.Cells["ProductIDGV"].Value))
-                                        //    {
-                                        //        Int64 prodIDht = Convert.ToInt64(row.Cells["ProductIDGV"].Value.ToString());
+                                        if (product_quantity == 0)
+                                        {
+                                            if (ht.ContainsKey(row.Cells["ProductIDGV"].Value))
+                                            {
+                                                Int64 prodIDht = Convert.ToInt64(row.Cells["ProductIDGV"].Value.ToString());
 
-                                        //        ht[prodIDht] = Convert.ToInt32(ht[prodIDht]) - 1;
-                                        //    }
-                                        //    else
-                                        //    {
-                                        //        ht.Add(row.Cells["ProductIDGV"].Value, 1);
-                                        //    }
+                                                ht[prodIDht] = Convert.ToInt32(ht[prodIDht]) - 1;
+                                            }
+                                            else
+                                            {
+                                                ht.Add(row.Cells["ProductIDGV"].Value, 1);
+                                            }
 
-                                        //    sales_return_dataGridView.Rows.Remove(row);
-                                        //}
-                                        //else
-                                        //{
-                                        //    row.Cells["QuantityGV"].Value = product_quantity;
+                                            sales_return_dataGridView.Rows.Remove(row);
+                                        }
+                                        else
+                                        {
+                                            row.Cells["QuantityGV"].Value = product_quantity;
 
-                                        //    row.Cells["PerProductTotalGV"].Value = Convert.ToSingle(row.Cells["PerProductTotalGV"].Value.ToString());
+                                            row.Cells["PerProductTotalGV"].Value = Convert.ToSingle(row.Cells["PerProductTotalGV"].Value.ToString());
 
-                                        //    if (ht.ContainsKey(row.Cells["ProductIDGV"].Value))
-                                        //    {
-                                        //        Int64 prodIDht = Convert.ToInt64(row.Cells["ProductIDGV"].Value.ToString());
+                                            if (ht.ContainsKey(row.Cells["ProductIDGV"].Value))
+                                            {
+                                                Int64 prodIDht = Convert.ToInt64(row.Cells["ProductIDGV"].Value.ToString());
 
-                                        //        ht[prodIDht] = Convert.ToInt32(ht[prodIDht]) + 1;
-                                        //    }
-                                        //    else
-                                        //    {
-                                        //        ht.Add(row.Cells["ProductIDGV"].Value, 1);
-                                        //    }
-                                        //    sales_return_dataGridView.Rows.Remove(row);
-                                        //}
+                                                ht[prodIDht] = Convert.ToInt32(ht[prodIDht]) + 1;
+                                            }
+                                            else
+                                            {
+                                                ht.Add(row.Cells["ProductIDGV"].Value, 1);
+                                            }
+                                            sales_return_dataGridView.Rows.Remove(row);
+                                        }
 
                                     }
                                     found = true;

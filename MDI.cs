@@ -125,9 +125,16 @@ namespace inv
                 }
                 else
                 {
-                    CATEGORIES ct = new CATEGORIES();
+                    if (LoginCodeClass.isAdmin == true)
+                    {
+                        var cat = new CATEGORIES();
 
-                    MainClass.ShowWindow(ct, MDI.ActiveForm);
+                        MainClass.ShowWindow(cat, MDI.ActiveForm);
+                    }
+                    else
+                    {
+                        MainClass.ShowMsg("You do not have permission to view categories.", "Error");
+                    }
                 }
             }
             catch (Exception ex)
@@ -146,9 +153,24 @@ namespace inv
                 }
                 else
                 {
-                    Products pd = new Products();
+                      if (LoginCodeClass.IsLogged == false)
+                      {
+                            throw new Exception("Login first.");
+                      }
+                        else
+                        {
+                            if (LoginCodeClass.isAdmin == true)
+                            {
+                                var prod = new Products();
 
-                    MainClass.ShowWindow(pd, MDI.ActiveForm);
+                                MainClass.ShowWindow(prod, MDI.ActiveForm);
+                            }
+                            else
+                            {
+                                MainClass.ShowMsg("You do not have permission to view Products.", "Error");
+                            }
+                        }
+                   
                 }
             }
             catch (Exception ex)
@@ -167,9 +189,16 @@ namespace inv
                 }
                 else
                 {
-                    PRODUCT_PRICING pp = new PRODUCT_PRICING();
+                    if (LoginCodeClass.isAdmin == true)
+                    {
+                        var ppd = new PRODUCT_PRICING();
 
-                    MainClass.ShowWindow(pp, MDI.ActiveForm);
+                        MainClass.ShowWindow(ppd, MDI.ActiveForm);
+                    }
+                    else
+                    {
+                        MainClass.ShowMsg("You do not have permission to view Product pricing.", "Error");
+                    }
                 }
             }
             catch (Exception ex)
@@ -188,9 +217,16 @@ namespace inv
                 }
                 else
                 {
-                    PURCHASE_INVOICE pi = new PURCHASE_INVOICE();
+                    if (LoginCodeClass.isAdmin == true)
+                    {
+                        var purch = new PURCHASE_INVOICE();
 
-                    MainClass.ShowWindow(pi, MDI.ActiveForm);
+                        MainClass.ShowWindow(purch, MDI.ActiveForm);
+                    }
+                    else
+                    {
+                        MainClass.ShowMsg("You do not have permission to view Purchase Invoice window.", "Error");
+                    }
                 }
             }
             catch (Exception ex)
@@ -252,9 +288,16 @@ namespace inv
                 }
                 else
                 {
-                    STOCK st = new STOCK();
+                    if (LoginCodeClass.isAdmin == true)
+                    {
+                        var st = new STOCK();
 
-                    MainClass.ShowWindow(st, MDI.ActiveForm);
+                        MainClass.ShowWindow(st, MDI.ActiveForm);
+                    }
+                    else
+                    {
+                        MainClass.ShowMsg("You do not have permission to view Purchase Invoice window.", "Error");
+                    }
                 }
             }
             catch (Exception ex)
@@ -273,9 +316,16 @@ namespace inv
                 }
                 else
                 {
-                    SUPPLIERS sp = new SUPPLIERS();
+                    if (LoginCodeClass.isAdmin == true)
+                    {
+                        var supp = new SUPPLIERS();
 
-                    MainClass.ShowWindow(sp, MDI.ActiveForm);
+                        MainClass.ShowWindow(supp, MDI.ActiveForm);
+                    }
+                    else
+                    {
+                        MainClass.ShowMsg("You do not have permission to view Suppliers.", "Error");
+                    }
                 }
             }
             catch (Exception ex)

@@ -41,6 +41,8 @@
             this.productIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productnameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buyingpriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PerUnitPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profitmarginGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finalpriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,6 +132,8 @@
             this.productIDGV,
             this.productnameGV,
             this.buyingpriceGV,
+            this.PerUnitPriceGV,
+            this.QuantityGV,
             this.profitmarginGV,
             this.discountGV,
             this.finalpriceGV,
@@ -213,6 +217,19 @@
             this.buyingpriceGV.ReadOnly = true;
             this.buyingpriceGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // PerUnitPriceGV
+            // 
+            this.PerUnitPriceGV.HeaderText = "Per Unit Price";
+            this.PerUnitPriceGV.MinimumWidth = 6;
+            this.PerUnitPriceGV.Name = "PerUnitPriceGV";
+            // 
+            // QuantityGV
+            // 
+            this.QuantityGV.HeaderText = "Quantity";
+            this.QuantityGV.MinimumWidth = 6;
+            this.QuantityGV.Name = "QuantityGV";
+            this.QuantityGV.ReadOnly = true;
+            // 
             // profitmarginGV
             // 
             this.profitmarginGV.HeaderText = "Profit Margin %";
@@ -281,6 +298,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn productnameGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn buyingpriceGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PerUnitPriceGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantityGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn profitmarginGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn discountGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn finalpriceGV;

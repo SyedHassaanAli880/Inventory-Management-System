@@ -49,11 +49,11 @@ namespace inv
 
                         productswrt[2] = dr[2].ToString();//Barcode
 
-                        productswrt[3] = dr[3].ToString();//Selling Price
+                        productswrt[3] = dr[3].ToString();//Per Unit Price
 
-                        productswrt[4] = dr[4].ToString();//Discount
+                        productswrt[4] = dr[4].ToString();//Per Unit Discount
 
-                        productswrt[5] = dr[5].ToString();//Final Selling Price
+                        productswrt[5] = dr[5].ToString();//Total Amount
 
                     }
                 }
@@ -95,6 +95,7 @@ namespace inv
         {
             product_barcode_textBox.Enabled = true;
         }
+
         private void back_button_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -117,6 +118,7 @@ namespace inv
             
             MainClass.ShowWindow(sd, MDI.ActiveForm);
         }
+
         private void product_barcode_textBox_Validating(object sender, CancelEventArgs e)
         {
             try
@@ -169,54 +171,60 @@ namespace inv
                         else
                         {
                         if (sales_dataGridView.Rows.Count == 0)
-                        {                                               //product ID     //product name //quantity              //sp                        //sp                   //discount    //discount             //fsp                           //fsp
-                            sales_dataGridView.Rows.Add(Convert.ToInt32(productswrt[0]), productswrt[1], 1, Convert.ToSingle(productswrt[3]), Convert.ToSingle(productswrt[3]), productswrt[4], productswrt[4], Convert.ToSingle(productswrt[5]), Convert.ToSingle(productswrt[5]));
+                        {                                       //product ID             //product name //quantity              //Per Unit Price        //discount   //Total Discount           //Total Amount
+                            sales_dataGridView.Rows.Add(Convert.ToInt32(productswrt[0]), productswrt[1], 1, Convert.ToSingle(productswrt[3]), productswrt[4], productswrt[4], Convert.ToSingle(productswrt[5]));
                         }
                         else
                         {
+                            foreach (DataGridViewRow row in sales_dataGridView.Rows)
+                            {
+                                if (row.Cells["productIDGV"].Value.ToString() == productswrt[0])
+                                {
+                                    productcheck = true; break;
+                                }
+                                else { productcheck = false; }
+                            }
+
+                            if (productcheck)
+                            {
                                 foreach (DataGridViewRow row in sales_dataGridView.Rows)
                                 {
                                     if (row.Cells["productIDGV"].Value.ToString() == productswrt[0])
                                     {
-                                        productcheck = true; break;
-                                    }
-                                    else { productcheck = false; }
-                                }
+                                        float disc = 0;
 
-                                if (productcheck)
-                                {
-                                    foreach (DataGridViewRow row in sales_dataGridView.Rows)
-                                    {
-                                        if (row.Cells["productIDGV"].Value.ToString() == productswrt[0])
+                                        row.Cells["productquantityGV"].Value = Convert.ToInt32(row.Cells["productquantityGV"].Value) + 1;
+
+                                        if (row.Cells["discountGV"].Value.ToString() != null)
                                         {
-                                            float disc = 0;
+                                            disc = Convert.ToSingle(row.Cells["discountGV"].Value.ToString()) * Convert.ToSingle(row.Cells["productquantityGV"].Value.ToString());
 
-                                            row.Cells["productquantityGV"].Value = Convert.ToInt32(row.Cells["productquantityGV"].Value) + 1;
-
-                                            if (row.Cells["discountGV"].Value.ToString() != null)
-                                            {
-                                                disc = Convert.ToSingle(row.Cells["discountGVDUP"].Value.ToString()) * Convert.ToSingle(row.Cells["productquantityGV"].Value.ToString());
-
-                                                row.Cells["discountGV"].Value = disc;
-                                            }
-
-                                            float sp = Convert.ToSingle(row.Cells["SellingPriceGVDUP"].Value) * Convert.ToInt64(row.Cells["productquantityGV"].Value);
-
-                                            float tot = (sp - Convert.ToSingle(row.Cells["discountGV"].Value.ToString()));
-
-                                            row.Cells["FinalSellingPriceGV"].Value = tot; row.Cells["SellingPriceGV"].Value = sp;
-
+                                            row.Cells["TotalDiscountGV"].Value = disc;
                                         }
+
+                                        float perunitPrice = Convert.ToSingle(row.Cells["PerUnitPriceGV"].Value) * Convert.ToInt64(row.Cells["productquantityGV"].Value);
+
+                                        float tot = (perunitPrice - Convert.ToSingle(row.Cells["TotalDiscountGV"].Value.ToString()));
+
+                                        row.Cells["TotalAmountGV"].Value = tot;
+
+                                        //row.Cells["PerUnitPriceGV"].Value = perunitPrice;
+
                                     }
-                                }                                     //product ID                  //product name      //quantity              //sp                                    //sp                   //discount       //discount             //fsp                           //fsp
-                                else { sales_dataGridView.Rows.Add(Convert.ToInt32(productswrt[0]), productswrt[1], 1, Convert.ToSingle(productswrt[3]), Convert.ToSingle(productswrt[3]), productswrt[4], productswrt[4], Convert.ToSingle(productswrt[5]), Convert.ToSingle(productswrt[5])); }
-
-
+                                }
                             }
+                            else
+                            {
+                                //product ID             //product name //quantity              //Per Unit Price        //discount   //Total Discount           //Total Amount
+                                sales_dataGridView.Rows.Add(Convert.ToInt32(productswrt[0]), productswrt[1], 1, Convert.ToSingle(productswrt[3]), productswrt[4], productswrt[4], Convert.ToSingle(productswrt[5]));
+                            }
+
+
+                        }
 
                             foreach (DataGridViewRow row2 in sales_dataGridView.Rows)
                             {
-                                gross += Convert.ToSingle(row2.Cells["FinalSellingPriceGV"].Value.ToString());
+                                gross += Convert.ToSingle(row2.Cells["TotalAmountGV"].Value.ToString());
                             }
 
                             gross_total_price_label.Text = Math.Round(gross,0).ToString(); gross = 0;
@@ -244,7 +252,7 @@ namespace inv
 
                 if (e.RowIndex != -1 && e.ColumnIndex != -1)
                 {
-                    if (e.ColumnIndex == 9)
+                    if (e.ColumnIndex == 7)
                     {
                         product_barcode_textBox.Text = "";
                         
@@ -266,7 +274,7 @@ namespace inv
                         {
                             gt = Convert.ToSingle(gross_total_price_label.Text);
 
-                            gt = gt - Convert.ToSingle(row.Cells["FinalSellingPriceGV"].Value.ToString());
+                            gt = gt - Convert.ToSingle(row.Cells["TotalAmountGV"].Value.ToString());
 
                             gross_total_price_label.Text = (Convert.ToSingle(gt)).ToString();
 
@@ -274,35 +282,22 @@ namespace inv
                         }
                         else if (q > 1)
                         {
-                            float fsp = Convert.ToSingle(row.Cells["FinalSellingPriceGV"].Value);
+                            
+row.Cells["TotalDiscountGV"].Value = Convert.ToSingle(row.Cells["TotalDiscountGV"].Value) - Convert.ToSingle(row.Cells["discountGV"].Value);
+  
+                            q--;
+                            
+                            row.Cells["productquantityGV"].Value = q;
 
-                            float fspdup = Convert.ToSingle(row.Cells["FinalSellingPriceGVDUP"].Value);
+                            float perunitPrice = Convert.ToSingle(row.Cells["PerUnitPriceGV"].Value) * Convert.ToInt64(row.Cells["productquantityGV"].Value);
 
-                            float fspTemp = fsp - fspdup;
+                            float tot = (perunitPrice - Convert.ToSingle(row.Cells["TotalDiscountGV"].Value.ToString()));
 
-                            float sp = Convert.ToSingle(row.Cells["SellingPriceGV"].Value);
-
-                            float spdup = Convert.ToSingle(row.Cells["SellingPriceGVDUP"].Value);
-
-                            float spTemp = sp - spdup;
-
-                            float disc = Convert.ToSingle(row.Cells["discountGV"].Value);
-
-                            float discdup = Convert.ToSingle(row.Cells["discountGVDUP"].Value);
-
-                            float discTemp = disc - discdup;
-
-                            row.Cells["FinalSellingPriceGV"].Value = Convert.ToSingle(fspTemp);
-
-                            row.Cells["SellingPriceGV"].Value = Convert.ToSingle(spTemp);
-
-                            row.Cells["discountGV"].Value = Convert.ToSingle(discTemp);
-
-                            q--; row.Cells["productquantityGV"].Value = q;
+                            row.Cells["TotalAmountGV"].Value = tot;
 
                             foreach (DataGridViewRow row2 in sales_dataGridView.Rows)
                             {
-                                gt += Convert.ToSingle(row2.Cells["FinalSellingPriceGV"].Value.ToString());
+                                gt += Convert.ToSingle(row2.Cells["TotalAmountGV"].Value.ToString());
                             }
 
                             gross_total_price_label.Text = (Convert.ToSingle(gt)).ToString();
@@ -331,7 +326,7 @@ namespace inv
                     {
                         disc += Convert.ToSingle(row.Cells["discountGV"].Value);
 
-                        gross += Convert.ToSingle(row.Cells["FinalSellingPriceGV"].Value);
+                        gross += Convert.ToSingle(row.Cells["TotalAmountGV"].Value);
                     }
 
                     gross_textBox.Text = Math.Round(gross,0).ToString();
@@ -450,6 +445,10 @@ namespace inv
                                     ht2.Add("@prodID",Convert.ToInt64(row.Cells["productIDGV"].Value.ToString()));
 
                                     ht2.Add("@quantity", Convert.ToInt32(row.Cells["productquantityGV"].Value.ToString()));
+
+                                    ht2.Add("@discount", Convert.ToSingle(row.Cells["discountGV"].Value.ToString()));
+
+                                    ht2.Add("@sellingprice", Convert.ToSingle(row.Cells["TotalAmountGV"].Value.ToString()));
 
                                     SQL_TASKS.insert_update_delete("st_insertSalesDetails", ht2);
                                 }

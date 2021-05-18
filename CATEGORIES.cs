@@ -84,6 +84,7 @@ namespace inv
 
         private void CATEGORIES_Load(object sender, EventArgs e)
         {
+            
             reset_disable();
 
             LoadCategory();

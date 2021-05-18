@@ -26,11 +26,9 @@ namespace inv
 
             lb.Items.Add(buyingpriceGV);
 
-            //lb.Items.Add(profitmarginGV);
+            lb.Items.Add(PerUnitPriceGV);
 
-            //lb.Items.Add(discountGV);
-
-            //lb.Items.Add(finalpriceGV);
+            lb.Items.Add(QuantityGV);
 
             lb.Items.Add(BarcodeGV);
 
@@ -194,13 +192,13 @@ namespace inv
 
                     if (row.Cells["profitmarginGV"].Value != null && rg.Match(row.Cells["profitmarginGV"].Value.ToString()).Success)
                     {
-                        float buyingprice = (Convert.ToSingle(row.Cells["buyingpriceGV"].Value.ToString()));
+                        float perunitPrice = (Convert.ToSingle(row.Cells["PerUnitPriceGV"].Value.ToString()));
 
                         float profitmargin = (Convert.ToSingle(row.Cells["profitmarginGV"].Value.ToString()) / 100);
 
-                        float amountTOincrease = profitmargin * buyingprice;
+                        float amountTOincrease = profitmargin * perunitPrice;
 
-                        float finalsellingprice = buyingprice + amountTOincrease;
+                        float finalsellingprice = perunitPrice + amountTOincrease;
 
                         float discount;
 

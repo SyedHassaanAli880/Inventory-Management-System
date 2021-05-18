@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sale_ID_textBox = new System.Windows.Forms.TextBox();
             this.product_barcode_label = new System.Windows.Forms.Label();
             this.load_button = new System.Windows.Forms.Button();
@@ -47,6 +47,7 @@
             this.sales_return_dataGridView = new System.Windows.Forms.DataGridView();
             this.total_amount_label = new System.Windows.Forms.Label();
             this.total_discount_label = new System.Windows.Forms.Label();
+            this.return_button = new System.Windows.Forms.Button();
             this.saleIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BarcodeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +63,6 @@
             this.UserIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.return_button = new System.Windows.Forms.Button();
             this.left_panel_sample2.SuspendLayout();
             this.top_left_panel_sample2.SuspendLayout();
             this.top_panel_sample2.SuspendLayout();
@@ -266,14 +266,14 @@
             this.sales_return_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.sales_return_dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.sales_return_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sales_return_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sales_return_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.sales_return_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sales_return_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.saleIDGV,
@@ -291,26 +291,26 @@
             this.UserIDGV,
             this.PaymentGV,
             this.ProductIDGV});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.sales_return_dataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.sales_return_dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.sales_return_dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sales_return_dataGridView.Location = new System.Drawing.Point(0, 55);
             this.sales_return_dataGridView.Name = "sales_return_dataGridView";
             this.sales_return_dataGridView.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sales_return_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sales_return_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.sales_return_dataGridView.RowHeadersVisible = false;
             this.sales_return_dataGridView.RowHeadersWidth = 51;
             this.sales_return_dataGridView.RowTemplate.Height = 24;
@@ -322,7 +322,7 @@
             // 
             this.total_amount_label.AutoSize = true;
             this.total_amount_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.total_amount_label.Location = new System.Drawing.Point(12, 630);
+            this.total_amount_label.Location = new System.Drawing.Point(4, 657);
             this.total_amount_label.Name = "total_amount_label";
             this.total_amount_label.Size = new System.Drawing.Size(164, 28);
             this.total_amount_label.TabIndex = 58;
@@ -332,11 +332,26 @@
             // 
             this.total_discount_label.AutoSize = true;
             this.total_discount_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.total_discount_label.Location = new System.Drawing.Point(13, 676);
+            this.total_discount_label.Location = new System.Drawing.Point(5, 703);
             this.total_discount_label.Name = "total_discount_label";
             this.total_discount_label.Size = new System.Drawing.Size(172, 28);
             this.total_discount_label.TabIndex = 59;
             this.total_discount_label.Text = "Total Discount: 0";
+            this.total_discount_label.Visible = false;
+            // 
+            // return_button
+            // 
+            this.return_button.FlatAppearance.BorderSize = 2;
+            this.return_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.return_button.ForeColor = System.Drawing.Color.White;
+            this.return_button.Location = new System.Drawing.Point(5, 532);
+            this.return_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.return_button.Name = "return_button";
+            this.return_button.Size = new System.Drawing.Size(389, 32);
+            this.return_button.TabIndex = 60;
+            this.return_button.Text = "&RETRUN ";
+            this.return_button.UseVisualStyleBackColor = true;
+            this.return_button.Click += new System.EventHandler(this.return_button_Click);
             // 
             // saleIDGV
             // 
@@ -409,7 +424,7 @@
             // 
             // ProductPriceGV
             // 
-            this.ProductPriceGV.HeaderText = "Product Price";
+            this.ProductPriceGV.HeaderText = "Per Unit Price";
             this.ProductPriceGV.MinimumWidth = 6;
             this.ProductPriceGV.Name = "ProductPriceGV";
             this.ProductPriceGV.ReadOnly = true;
@@ -420,10 +435,11 @@
             this.PerProductDiscountGV.MinimumWidth = 6;
             this.PerProductDiscountGV.Name = "PerProductDiscountGV";
             this.PerProductDiscountGV.ReadOnly = true;
+            this.PerProductDiscountGV.Visible = false;
             // 
             // PerProductTotalGV
             // 
-            this.PerProductTotalGV.HeaderText = "Per Product Total";
+            this.PerProductTotalGV.HeaderText = "Total Price";
             this.PerProductTotalGV.MinimumWidth = 6;
             this.PerProductTotalGV.Name = "PerProductTotalGV";
             this.PerProductTotalGV.ReadOnly = true;
@@ -451,20 +467,6 @@
             this.ProductIDGV.Name = "ProductIDGV";
             this.ProductIDGV.ReadOnly = true;
             this.ProductIDGV.Visible = false;
-            // 
-            // return_button
-            // 
-            this.return_button.FlatAppearance.BorderSize = 2;
-            this.return_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.return_button.ForeColor = System.Drawing.Color.White;
-            this.return_button.Location = new System.Drawing.Point(5, 532);
-            this.return_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.return_button.Name = "return_button";
-            this.return_button.Size = new System.Drawing.Size(369, 32);
-            this.return_button.TabIndex = 60;
-            this.return_button.Text = "&RETRUN ";
-            this.return_button.UseVisualStyleBackColor = true;
-            this.return_button.Click += new System.EventHandler(this.return_button_Click);
             // 
             // SALES_RETURN
             // 
@@ -506,6 +508,7 @@
         private System.Windows.Forms.DataGridView sales_return_dataGridView;
         private System.Windows.Forms.Label total_amount_label;
         private System.Windows.Forms.Label total_discount_label;
+        private System.Windows.Forms.Button return_button;
         private System.Windows.Forms.DataGridViewTextBoxColumn saleIDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn BarcodeGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductGV;
@@ -521,6 +524,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UserIDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductIDGV;
-        private System.Windows.Forms.Button return_button;
     }
 }

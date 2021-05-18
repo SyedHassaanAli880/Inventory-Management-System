@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.product_barcode_textBox = new System.Windows.Forms.TextBox();
             this.product_barcode_label = new System.Windows.Forms.Label();
             this.gross_total_price_label = new System.Windows.Forms.Label();
@@ -57,12 +54,10 @@
             this.productIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productnameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productquantityGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SellingPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SellingPriceGVDUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PerUnitPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiscountGVDUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FinalSellingPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FinalSellingPriceGVDUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalDiscountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteGV = new System.Windows.Forms.DataGridViewButtonColumn();
             this.left_panel_sample2.SuspendLayout();
             this.top_left_panel_sample2.SuspendLayout();
@@ -192,33 +187,31 @@
             this.productIDGV,
             this.productnameGV,
             this.productquantityGV,
-            this.SellingPriceGV,
-            this.SellingPriceGVDUP,
+            this.PerUnitPriceGV,
             this.discountGV,
-            this.DiscountGVDUP,
-            this.FinalSellingPriceGV,
-            this.FinalSellingPriceGVDUP,
+            this.TotalDiscountGV,
+            this.TotalAmountGV,
             this.deleteGV});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.sales_dataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.sales_dataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.sales_dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sales_dataGridView.Location = new System.Drawing.Point(0, 55);
             this.sales_dataGridView.Name = "sales_dataGridView";
             this.sales_dataGridView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sales_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sales_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.sales_dataGridView.RowHeadersVisible = false;
             this.sales_dataGridView.RowHeadersWidth = 51;
             this.sales_dataGridView.RowTemplate.Height = 24;
@@ -261,9 +254,9 @@
             this.total_discount_label.AutoSize = true;
             this.total_discount_label.Location = new System.Drawing.Point(2, 248);
             this.total_discount_label.Name = "total_discount_label";
-            this.total_discount_label.Size = new System.Drawing.Size(118, 20);
+            this.total_discount_label.Size = new System.Drawing.Size(245, 20);
             this.total_discount_label.TabIndex = 38;
-            this.total_discount_label.Text = "Total Discount :";
+            this.total_discount_label.Text = "Per Unit Discount of all products :";
             // 
             // amount_given_textBox
             // 
@@ -374,82 +367,53 @@
             // 
             // productquantityGV
             // 
-            this.productquantityGV.HeaderText = "Product Quantity";
+            this.productquantityGV.HeaderText = "Quantity";
             this.productquantityGV.MinimumWidth = 6;
             this.productquantityGV.Name = "productquantityGV";
             this.productquantityGV.ReadOnly = true;
             this.productquantityGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // SellingPriceGV
+            // PerUnitPriceGV
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.Format = "N2";
             dataGridViewCellStyle2.NullValue = null;
-            this.SellingPriceGV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.SellingPriceGV.HeaderText = "Selling Price (In rupees)";
-            this.SellingPriceGV.MinimumWidth = 6;
-            this.SellingPriceGV.Name = "SellingPriceGV";
-            this.SellingPriceGV.ReadOnly = true;
-            this.SellingPriceGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PerUnitPriceGV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.PerUnitPriceGV.HeaderText = "Per Unit Price (With Discount)";
+            this.PerUnitPriceGV.MinimumWidth = 6;
+            this.PerUnitPriceGV.Name = "PerUnitPriceGV";
+            this.PerUnitPriceGV.ReadOnly = true;
+            this.PerUnitPriceGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // SellingPriceGVDUP
+            // discountGV
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.Format = "N2";
             dataGridViewCellStyle3.NullValue = null;
-            this.SellingPriceGVDUP.DefaultCellStyle = dataGridViewCellStyle3;
-            this.SellingPriceGVDUP.HeaderText = "Selling Price(Duplicate)";
-            this.SellingPriceGVDUP.MinimumWidth = 6;
-            this.SellingPriceGVDUP.Name = "SellingPriceGVDUP";
-            this.SellingPriceGVDUP.ReadOnly = true;
-            this.SellingPriceGVDUP.Visible = false;
-            // 
-            // discountGV
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.discountGV.DefaultCellStyle = dataGridViewCellStyle4;
-            this.discountGV.HeaderText = "Discount (In rupees)";
+            this.discountGV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.discountGV.HeaderText = "Per Unit Discount";
             this.discountGV.MinimumWidth = 6;
             this.discountGV.Name = "discountGV";
             this.discountGV.ReadOnly = true;
             // 
-            // DiscountGVDUP
+            // TotalDiscountGV
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.DiscountGVDUP.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DiscountGVDUP.HeaderText = "Discount(Duplicate)";
-            this.DiscountGVDUP.MinimumWidth = 6;
-            this.DiscountGVDUP.Name = "DiscountGVDUP";
-            this.DiscountGVDUP.ReadOnly = true;
-            this.DiscountGVDUP.Visible = false;
+            this.TotalDiscountGV.HeaderText = "Total Discount";
+            this.TotalDiscountGV.MinimumWidth = 6;
+            this.TotalDiscountGV.Name = "TotalDiscountGV";
+            this.TotalDiscountGV.ReadOnly = true;
             // 
-            // FinalSellingPriceGV
+            // TotalAmountGV
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.FinalSellingPriceGV.DefaultCellStyle = dataGridViewCellStyle6;
-            this.FinalSellingPriceGV.HeaderText = "Final Selling Price (In rupees)";
-            this.FinalSellingPriceGV.MinimumWidth = 6;
-            this.FinalSellingPriceGV.Name = "FinalSellingPriceGV";
-            this.FinalSellingPriceGV.ReadOnly = true;
-            this.FinalSellingPriceGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // FinalSellingPriceGVDUP
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.FinalSellingPriceGVDUP.DefaultCellStyle = dataGridViewCellStyle7;
-            this.FinalSellingPriceGVDUP.HeaderText = "Final Selling Price (Duplicate)";
-            this.FinalSellingPriceGVDUP.MinimumWidth = 6;
-            this.FinalSellingPriceGVDUP.Name = "FinalSellingPriceGVDUP";
-            this.FinalSellingPriceGVDUP.ReadOnly = true;
-            this.FinalSellingPriceGVDUP.Visible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.TotalAmountGV.DefaultCellStyle = dataGridViewCellStyle4;
+            this.TotalAmountGV.HeaderText = "Total Amount(With Discount)";
+            this.TotalAmountGV.MinimumWidth = 6;
+            this.TotalAmountGV.Name = "TotalAmountGV";
+            this.TotalAmountGV.ReadOnly = true;
+            this.TotalAmountGV.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // deleteGV
             // 
@@ -504,12 +468,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn productnameGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn productquantityGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SellingPriceGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SellingPriceGVDUP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PerUnitPriceGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn discountGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiscountGVDUP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FinalSellingPriceGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FinalSellingPriceGVDUP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalDiscountGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmountGV;
         private System.Windows.Forms.DataGridViewButtonColumn deleteGV;
     }
 }

@@ -90,6 +90,7 @@
             this.forgot_password_button.TabIndex = 14;
             this.forgot_password_button.Text = "FORGOT PASSWORD?";
             this.forgot_password_button.UseVisualStyleBackColor = true;
+            this.forgot_password_button.Visible = false;
             this.forgot_password_button.Click += new System.EventHandler(this.forgot_password_button_Click);
             // 
             // change_password_button
@@ -105,6 +106,7 @@
             this.change_password_button.TabIndex = 13;
             this.change_password_button.Text = "CHANGE PASSWORD";
             this.change_password_button.UseVisualStyleBackColor = true;
+            this.change_password_button.Visible = false;
             this.change_password_button.Click += new System.EventHandler(this.change_password_button_Click);
             // 
             // login_button
