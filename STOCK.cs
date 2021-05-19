@@ -37,6 +37,7 @@ namespace inv
 
             SQL_TASKS.load_data("st_getSTOCK", stocks_dataGridView, lb);
         }
+
         private void STOCK_Load(object sender, EventArgs e)
         {
             ListBox lb = new ListBox();

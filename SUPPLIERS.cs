@@ -78,7 +78,6 @@ namespace inv
             }
         }
 
-
         public void loadSuppliers()
         {
             ListBox lb = new ListBox();
@@ -398,7 +397,11 @@ namespace inv
 
         private void SUPPLIERS_Load(object sender, EventArgs e)
         {
-            loadSuppliers(); enable_crude_buttons(); MainClass.disbale_reset(left_panel_sample2);
+            loadSuppliers(); 
+            
+            enable_crude_buttons(); 
+            
+            MainClass.disbale_reset(left_panel_sample2);
         }
 
         private void suppliers_dataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

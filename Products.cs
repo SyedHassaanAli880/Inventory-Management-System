@@ -35,6 +35,7 @@ namespace inv
 
             SQL_TASKS.load_data("st_getPRODUCTS", products_dataGridView, lb);
         }
+
         private void products_dataGridView_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -178,7 +179,6 @@ namespace inv
             delete_button.Enabled = false;
         }
 
-        
         private void Products_Load(object sender, EventArgs e)
         {
             reset_disable();

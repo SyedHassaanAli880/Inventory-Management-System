@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.IO;
 
 namespace inv
@@ -148,6 +143,7 @@ namespace inv
                 }
             }
         }
+
         public static void ShowWindow(Form openwin, Form closewin, Form MDIwin)
         {
             closewin.Close();

@@ -43,8 +43,6 @@ namespace inv
 
                             var sal = new SALES();
 
-                            
-
                             MainClass.ShowWindow(sal, MDI.ActiveForm);
 
                         }

@@ -148,6 +148,7 @@ namespace inv
 
             return productswrt;
         }
+
         public override void add_button_Click(object sender, EventArgs e)
         {
             MainClass.enable_rsest(left_panel_sample2);
@@ -447,7 +448,7 @@ namespace inv
                             }
 
 
-                        }
+                            }
 
                         if (count > 0 && success == true)
                             {

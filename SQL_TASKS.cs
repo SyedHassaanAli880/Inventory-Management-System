@@ -11,11 +11,11 @@ namespace inv
 {
     public class SQL_TASKS
     {
-        public static string s;
+        //public static string s;
 
         private Int64 purchaseinvoiceIDSQLTASKS;
 
-        public int PIDcount;
+        private int PIDcount;
 
         private object stockcount = 0;
 
@@ -405,7 +405,7 @@ namespace inv
             }
         }
 
-        //load any kind of data
+        //Generic load data:
         public static void load_data(string proc, DataGridView dv, ListBox lb)
         {
             try
