@@ -29,34 +29,34 @@ namespace inv
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.SalesReturncrystalReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // SalesReturncrystalReportViewer
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowCloseButton = false;
-            this.crystalReportViewer1.ShowCopyButton = false;
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.ShowRefreshButton = false;
-            this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1270, 488);
-            this.crystalReportViewer1.TabIndex = 1;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.SalesReturncrystalReportViewer.ActiveViewIndex = -1;
+            this.SalesReturncrystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SalesReturncrystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.SalesReturncrystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SalesReturncrystalReportViewer.Location = new System.Drawing.Point(0, 0);
+            this.SalesReturncrystalReportViewer.Name = "SalesReturncrystalReportViewer";
+            this.SalesReturncrystalReportViewer.ShowCloseButton = false;
+            this.SalesReturncrystalReportViewer.ShowCopyButton = false;
+            this.SalesReturncrystalReportViewer.ShowGroupTreeButton = false;
+            this.SalesReturncrystalReportViewer.ShowLogo = false;
+            this.SalesReturncrystalReportViewer.ShowParameterPanelButton = false;
+            this.SalesReturncrystalReportViewer.ShowRefreshButton = false;
+            this.SalesReturncrystalReportViewer.ShowTextSearchButton = false;
+            this.SalesReturncrystalReportViewer.Size = new System.Drawing.Size(1424, 721);
+            this.SalesReturncrystalReportViewer.TabIndex = 1;
+            this.SalesReturncrystalReportViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // SalesReturnReceipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1270, 488);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.ClientSize = new System.Drawing.Size(1424, 721);
+            this.Controls.Add(this.SalesReturncrystalReportViewer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "SalesReturnReceipt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -68,6 +68,6 @@ namespace inv
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer SalesReturncrystalReportViewer;
     }
 }

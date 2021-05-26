@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace inv
@@ -19,7 +12,7 @@ namespace inv
 
         private void SalesReturnReceipt_Load(object sender, EventArgs e)
         {
-
+            SQL_TASKS.ShowReportSaleReturn(SalesReturncrystalReportViewer, "st_getRefundInvoice","@saleID","1");
         }
     }
 }

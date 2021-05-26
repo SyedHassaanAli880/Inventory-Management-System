@@ -461,7 +461,7 @@ row.Cells["TotalDiscountGV"].Value = Convert.ToSingle(row.Cells["TotalDiscountGV
 
                                 SALES_REPORT sr = new SALES_REPORT();
 
-                                sr.Show();
+                                sr.ShowDialog();
 
                                 gross_total_price_label.Text = "0.00";
                             }

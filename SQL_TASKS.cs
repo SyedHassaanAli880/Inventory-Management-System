@@ -21,7 +21,7 @@ namespace inv
 
         private static int ProductStockQuantity = 0;
 
-        public static void ShowReport(CrystalReportViewer crv,string proc, string param, object val1)
+        public static void ShowReport(CrystalReportViewer crv,string proc, string param=null, object val1=null)
         {
             try
             {
@@ -49,6 +49,42 @@ namespace inv
 
                 crv.ReportSource = rd; 
                 
+                crv.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MainClass.ShowMsg(ex.Message, "Error");
+            }
+        }
+
+        public static void ShowReportSaleReturn(CrystalReportViewer crv, string proc, string param = null, object val1 = null)
+        {
+            try
+            {
+                ReportDocument rd;
+
+                SqlConnection sql_con = new SqlConnection(MainClass.connection());
+
+                SqlCommand cmd = new SqlCommand(proc, sql_con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue(param, val1);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                DataTable dat = new DataTable();
+
+                adapter.Fill(dat);
+
+                rd = new ReportDocument();
+
+                rd.Load(Application.StartupPath + "\\Reports\\SalesReturnReport.rpt");
+
+                rd.SetDataSource(dat);
+
+                crv.ReportSource = rd;
+
                 crv.RefreshReport();
             }
             catch (Exception ex)

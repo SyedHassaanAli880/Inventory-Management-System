@@ -160,6 +160,12 @@
     <Compile Include="SalesReturnReceipt.Designer.cs">
       <DependentUpon>SalesReturnReceipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesReturnReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesReturnReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="sample1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesReturnReceipt.resx">
       <DependentUpon>SalesReturnReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesReturnReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesReturnReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="sample1.resx">
       <DependentUpon>sample1.cs</DependentUpon>

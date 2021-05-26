@@ -372,6 +372,7 @@ namespace inv
                                             MainClass.ShowMsg("Return and Refund Successfull", "Success");
                                             x = 0;
                                             ht.Clear();
+                                          
                                         }
                                         else
                                         {
@@ -417,6 +418,10 @@ namespace inv
                                             }
 
                                             sales_return_dataGridView.Rows.Remove(row);
+
+                                            SalesReturnReceipt srr = new SalesReturnReceipt();
+
+                                            srr.ShowDialog();
                                         }
                                         else
                                         {
@@ -434,7 +439,12 @@ namespace inv
                                             {
                                                 ht.Add(row.Cells["ProductIDGV"].Value, 1);
                                             }
+
                                             sales_return_dataGridView.Rows.Remove(row);
+
+                                            SalesReturnReceipt srr = new SalesReturnReceipt();
+
+                                            srr.ShowDialog();
                                         }
 
                                     }
@@ -446,6 +456,7 @@ namespace inv
                                 }
                                 
                             }
+                            
                             sc.Complete();
                         }
                     }
