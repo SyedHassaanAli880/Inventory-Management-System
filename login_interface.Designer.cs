@@ -145,7 +145,7 @@
             this.username_textBox.Name = "username_textBox";
             this.username_textBox.Size = new System.Drawing.Size(389, 30);
             this.username_textBox.TabIndex = 10;
-            this.username_textBox.Text = "syedhassanali880@gmail.com";
+            this.username_textBox.Text = "Hassan@gmail";
             // 
             // password_label
             // 
@@ -170,22 +170,22 @@
             // admin_radioButton
             // 
             this.admin_radioButton.AutoSize = true;
+            this.admin_radioButton.Checked = true;
             this.admin_radioButton.Location = new System.Drawing.Point(12, 172);
             this.admin_radioButton.Name = "admin_radioButton";
             this.admin_radioButton.Size = new System.Drawing.Size(85, 27);
             this.admin_radioButton.TabIndex = 15;
+            this.admin_radioButton.TabStop = true;
             this.admin_radioButton.Text = "Admin";
             this.admin_radioButton.UseVisualStyleBackColor = true;
             // 
             // other_radioButton
             // 
             this.other_radioButton.AutoSize = true;
-            this.other_radioButton.Checked = true;
             this.other_radioButton.Location = new System.Drawing.Point(120, 172);
             this.other_radioButton.Name = "other_radioButton";
             this.other_radioButton.Size = new System.Drawing.Size(77, 27);
             this.other_radioButton.TabIndex = 16;
-            this.other_radioButton.TabStop = true;
             this.other_radioButton.Text = "Other";
             this.other_radioButton.UseVisualStyleBackColor = true;
             // 

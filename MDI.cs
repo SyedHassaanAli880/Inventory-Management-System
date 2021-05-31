@@ -189,16 +189,10 @@ namespace inv
                 }
                 else
                 {
-                    if (LoginCodeClass.isAdmin == true)
-                    {
-                        var ppd = new PRODUCT_PRICING();
+                      var ppd = new PRODUCT_PRICING();
 
                         MainClass.ShowWindow(ppd, MDI.ActiveForm);
-                    }
-                    else
-                    {
-                        MainClass.ShowMsg("You do not have permission to view Product pricing.", "Error");
-                    }
+                   
                 }
             }
             catch (Exception ex)
@@ -217,16 +211,9 @@ namespace inv
                 }
                 else
                 {
-                    if (LoginCodeClass.isAdmin == true)
-                    {
-                        var purch = new PURCHASE_INVOICE();
+                    var purch = new PURCHASE_INVOICE();
 
-                        MainClass.ShowWindow(purch, MDI.ActiveForm);
-                    }
-                    else
-                    {
-                        MainClass.ShowMsg("You do not have permission to view Purchase Invoice window.", "Error");
-                    }
+                    MainClass.ShowWindow(purch, MDI.ActiveForm);
                 }
             }
             catch (Exception ex)

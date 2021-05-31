@@ -184,7 +184,7 @@ namespace inv
 
         public override void edit_button_Click(object sender, EventArgs e)
         {
-            if (name_textBox.Text == "" || phone_number_textBox.Text == "" || email_textBox.Text == "" || password_textBox.Text == "" || username_textBox.Text == "")
+            if (name_textBox.Text == "" || phone_number_textBox.Text == "" || email_textBox.Text == "" || password_textBox.Text == "" )
             {
                 MainClass.ShowMsg("Please enter a record to edit.", "error");
 
@@ -199,8 +199,6 @@ namespace inv
                 temp_name = name_textBox.Text;
 
                 temp_phone = phone_number_textBox.Text;
-
-                temp_username = username_textBox.Text;
 
                 temp_password = password_textBox.Text;
 
@@ -219,7 +217,7 @@ namespace inv
 
         public override void save_button_Click(object sender, EventArgs e)
         {
-            if (name_textBox.Text == "" || username_textBox.Text == "" || password_textBox.Text == "" || email_textBox.Text == "" || phone_number_label.Text == "" || status_comboBox.SelectedIndex == -1)
+            if (name_textBox.Text == "" || password_textBox.Text == "" || email_textBox.Text == "" || phone_number_label.Text == "" || status_comboBox.SelectedIndex == -1)
             {
                 MainClass.ShowMsg("Please enter all required information.", "error");
 
@@ -245,7 +243,7 @@ namespace inv
                     {
                         Hashtable ht = new Hashtable();
 
-                        ht.Add("@name", username_textBox.Text);
+                        ht.Add("@name", name_textBox.Text);
 
                         ht.Add("@email", email_textBox.Text);
 
@@ -259,7 +257,7 @@ namespace inv
 
                         if (SQL_TASKS.insert_update_delete("st_insertusers", ht) > 0)
                         {
-                            MainClass.ShowMsg(username_textBox.Text + " added successfully to the system.", "Success");
+                            MainClass.ShowMsg("User added successfully to the system.", "Success");
 
                             MainClass.disbale_reset(left_panel_sample2);
 
@@ -298,7 +296,7 @@ namespace inv
                    
                     try
                     {
-                        if (name_textBox.Text == temp_name && phone_number_textBox.Text == temp_phone && username_textBox.Text == temp_username && password_textBox.Text == temp_password && email_textBox.Text == temp_mail && status_comboBox.Text == temp_status )
+                        if (name_textBox.Text == temp_name && phone_number_textBox.Text == temp_phone  && password_textBox.Text == temp_password && email_textBox.Text == temp_mail && status_comboBox.Text == temp_status )
                         {
                             MainClass.ShowMsg("This record is already saved.","error");
 
@@ -309,7 +307,7 @@ namespace inv
 
                         Hashtable ht = new Hashtable();
 
-                        ht.Add("@name", username_textBox.Text);
+                        ht.Add("@name", name_textBox.Text);
 
                         ht.Add("@email", email_textBox.Text);
 
@@ -325,7 +323,7 @@ namespace inv
 
                         if (SQL_TASKS.insert_update_delete("st_updateusers", ht) > 0)
                         {
-                            MainClass.ShowMsg(username_textBox.Text + " updated successfully.", "Success");
+                            MainClass.ShowMsg("User updated successfully.", "Success");
 
                             MainClass.disbale_reset(left_panel_sample2);
 
@@ -361,7 +359,7 @@ namespace inv
 
         public override void delete_button_Click(object sender, EventArgs e)
         {
-            if (name_textBox.Text == "" || phone_number_textBox.Text == "" || username_textBox.Text == "" || password_textBox.Text == "" || email_textBox.Text == "")
+            if (name_textBox.Text == "" || phone_number_textBox.Text == "" || password_textBox.Text == "" || email_textBox.Text == "")
             {
                 MainClass.ShowMsg("Please enter a record to delete.", "error");
 
@@ -369,7 +367,7 @@ namespace inv
 
                 enable_crude_buttons();
             }
-            else if (name_textBox.Enabled == true || phone_number_textBox.Enabled == true || username_textBox.Enabled == true || password_textBox.Enabled == true || email_textBox.Enabled == true)
+            else if (name_textBox.Enabled == true || phone_number_textBox.Enabled == true  || password_textBox.Enabled == true || email_textBox.Enabled == true)
             {
                 MainClass.ShowMsg("Please select record from the table.","error");
 
@@ -377,7 +375,7 @@ namespace inv
 
                 enable_crude_buttons();
             }
-            else if ((name_textBox.Enabled == false && phone_number_textBox.Enabled == false && username_textBox.Enabled == false && password_textBox.Enabled == false && email_textBox.Enabled == false) && (name_textBox.Text != "" && phone_number_textBox.Text != "" && username_textBox.Text != "" && password_textBox.Text != "" && email_textBox.Text != ""))
+            else if ((name_textBox.Enabled == false && phone_number_textBox.Enabled == false && password_textBox.Enabled == false && email_textBox.Enabled == false) && (name_textBox.Text != "" && phone_number_textBox.Text != ""  && password_textBox.Text != "" && email_textBox.Text != ""))
             {
                 try
                 {
@@ -391,7 +389,7 @@ namespace inv
 
                         if (SQL_TASKS.insert_update_delete("st_deleteusers", ht) > 0)
                         {
-                            MainClass.ShowMsg(username_textBox.Text + " deleted successfully.", "Success");
+                            MainClass.ShowMsg("User deleted successfully.", "Success");
 
                             MainClass.disbale_reset(left_panel_sample2);
 
